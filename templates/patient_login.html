@@ -1,3 +1,5 @@
+{% include 'navbar2.html'%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,6 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    {% include 'navbar2.html'%}
     <br><br>
     <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100">
@@ -47,8 +48,8 @@
                   </div>
       
                   <div>
-                    <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
-                    </p>
+                    <p class="mb-0">Don't have an account?</p>
+                    <button id="signup" class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
                   </div>
       
                 </div>
