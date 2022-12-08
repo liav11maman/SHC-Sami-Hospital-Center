@@ -6,8 +6,8 @@
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
 }
-  
-@-webkit-keyframes glow {
+
+@keyframes glow {
     from {
       text-shadow: 0 0 10px #eeeeee, 0 0 20px #2681ff, 0 0 30px #2681ff, 0 0 40px #2681ff, 
                    0 0 50px #2681ff, 0 0 60px #2681ff, 0 0 70px #2681ff;
@@ -214,3 +214,29 @@ hr.solid{
 .button-87:active {
   transform: scale(0.95);
 }
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.gradient-custom {
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgb(17, 187, 203), rgba(37, 117, 252, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(44, 169, 75), rgb(43, 104, 211))
+  }
+  
+  
