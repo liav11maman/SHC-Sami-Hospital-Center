@@ -1,5 +1,31 @@
-{% include 'navbar.html' %}
+{% extends 'index.html' %}
+{%block content%}
 
+<div class="back" id="img-text">
+    {% load static %}
+    <img id="item1" src="{% static 'logo3Fixed.jpg' %}" alt="image"/>
+    <div class="text-block">
+        <h1 class="glow">SHC-Sami Hospital Center </h1>
+    </div>
+    <div class="text-block2">
+        <h1>For Emergancy</h1>
+        <button class="button-87" role="button">Scheduele an Appointment Now !!!</button>
+    </div>
+</div>
+
+{% include 'admin_doctor_patient_card.html' %}
+<br><br>
+
+<footer style="color:white;">
+    &copy; 2022 Copyright Developed by Group 19 
+</footer>
+<div class="text-white mb-3 mb-md-0" style="color:black;">
+    Copyright © 2020. All rights reserved.
+</div>
+    
+{% endblock content %}
+
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,4 +60,4 @@
         Copyright © 2020. All rights reserved.
     </div>
 </body>
-</html>
+</html>-->
