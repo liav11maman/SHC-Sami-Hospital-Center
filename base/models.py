@@ -10,7 +10,7 @@ class Patient(models.Model):
     last_name = models.CharField(max_length=64)
     age = models.PositiveIntegerField()
     disease = models.CharField(max_length=64)
-    id_num = models.PositiveIntegerField()
+    id_num = models.BigIntegerField()
     smoking = models.CharField(max_length=1, choices=SMOKE_CHOICES)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
 
@@ -23,5 +23,5 @@ class Doctor(models.Model):
     specialization = models.CharField(max_length=64)
     educational_institution = models.CharField(max_length=64)
     experience = models.PositiveIntegerField()
-    id_num = models.PositiveIntegerField()
+    id_num = models.BigIntegerField()
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
