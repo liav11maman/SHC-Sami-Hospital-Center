@@ -52,3 +52,7 @@ def signup2(request):
     page = 'signup'
     context = {}
     return render(request, 'doctor_login_signup.html', context)    
+
+def patient(request):
+    return render(request, 'patient_page.html')
+        
