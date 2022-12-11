@@ -55,4 +55,7 @@ def signup2(request):
 
 def patient(request):
     return render(request, 'patient_page.html')
+
+def pharmacy(request):
+    return render(request, 'pharmacy.html')
         

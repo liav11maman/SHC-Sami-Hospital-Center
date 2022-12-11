@@ -15,4 +15,5 @@ urlpatterns = [
     path('patient_login/patient_signup/', views.signup, name="signup"),
     path('', views.style, name="style"),
     path('patient_page/', views.patient, name="patient"),
+    path('pharmacy/', views.pharmacy, name="pharmacy"),
 ]
