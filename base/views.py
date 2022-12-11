@@ -1,10 +1,4 @@
 from django.shortcuts import render, redirect
-<<<<<<< HEAD
-from django.http import HttpResponse
-from django.db.models import Q
-from django.contrib.auth.models import User
-from django.contrib import messages
-=======
 from django.db.models import Q
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -12,7 +6,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.contrib.auth import logout as django_logout
->>>>>>> GuyEzra
 
 
 def home(request):
@@ -21,13 +14,6 @@ def home(request):
 def style(request):
     return render(request, 'style.css')
 
-<<<<<<< HEAD
-def manager_login(request):
-    return render(request, 'manager_login.html')        
-
-def loginPatient(request):
-    page = 'login'
-=======
 '''
 def manager_login(request):
     form = UserCreationForm()
@@ -37,7 +23,6 @@ def manager_login(request):
 def loginPatient(request):
     page = 'login'
     form = UserCreationForm()
->>>>>>> GuyEzra
     if request == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -47,9 +32,6 @@ def loginPatient(request):
         except:
             messages.error(request, 'User does not exist')
 
-<<<<<<< HEAD
-    context={'page':page}
-=======
         user = authenticate(request, username=username, password=password)    
 
         if user is not None:
@@ -60,7 +42,6 @@ def loginPatient(request):
 
 
     context={'page':page, 'form':form}
->>>>>>> GuyEzra
     return render(request, 'patient_login_signup.html',context)
 
 def loginDoctor(request):
@@ -79,20 +60,11 @@ def loginDoctor(request):
 
 
 def signup(request):
-<<<<<<< HEAD
-    page = 'signup'
-    context = {}
-    return render(request, 'patient_login_signup.html', context)
-=======
     return render(request, 'signup.html')
->>>>>>> GuyEzra
 
 def signup2(request):
     page = 'signup'
     context = {}
-<<<<<<< HEAD
-    return render(request, 'doctor_login_signup.html', context)    
-=======
     return render(request, 'doctor_login_signup.html', context)    
 
 def logout(request):
@@ -175,4 +147,3 @@ def blood_donation(request):
 
 
         
->>>>>>> GuyEzra

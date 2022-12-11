@@ -14,11 +14,4 @@ class DoctorAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.Patient, PatientAdmin)
-<<<<<<< HEAD
 admin.site.register(models.Doctor, DoctorAdmin)
-
-
-
-=======
-admin.site.register(models.Doctor, DoctorAdmin)
->>>>>>> GuyEzra
