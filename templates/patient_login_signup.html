@@ -80,18 +80,30 @@
       
                   <div class="mb-md-5 mt-md-4 pb-5">
       
+<<<<<<< HEAD
                     <h2 class="fw-bold mb-2 text-uppercase">Patient Sign Up</h2>
+=======
+                    <h2 class="fw-bold mb-2 text-uppercase">Patient Login</h2>
+>>>>>>> GuyEzra
                     <p class="text-white-50 mb-5">Welcome to the Hospital Management System</p>
                     
                     <form method="POST" action="">
                         {% csrf_token %}
                         <div class="form-outline form-white mb-4">
+<<<<<<< HEAD
                             <label class="form-label" for="typeEmailX">Please Enter your Email:</label>
+=======
+                          <label class="form-label" for="typeEmailX">Please Enter your Email:</label>
+>>>>>>> GuyEzra
                           <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Email" />
                         </div>
           
                         <div class="form-outline form-white mb-4">
+<<<<<<< HEAD
                             <label class="form-label" for="typePasswordX">Please Enter your Password:</label>
+=======
+                          <label class="form-label" for="typePasswordX">Please Enter your Password:</label>
+>>>>>>> GuyEzra
                           <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Password"/>
                         </div>
                         <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
@@ -134,6 +146,7 @@
     
                 <div class="mb-md-5 mt-md-4 pb-5">
     
+<<<<<<< HEAD
                   <h2 class="fw-bold mb-2 text-uppercase">Patient Login</h2>
                   <p class="text-white-50 mb-5">Welcome to the Hospital Management System</p>
                   
@@ -156,6 +169,35 @@
                     <a href="#" class="text-white"><i class="fab fa-google fa-lg"></i></a>
                   </div>
     
+=======
+                  <h2 class="fw-bold mb-2 text-uppercase">Patient Sign Up</h2>
+                  <p class="text-white-50 mb-5">Welcome to the Hospital Management System</p>
+                  
+                  <form method="POST" action="/">
+                      {% csrf_token %}
+                      <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="fName">Please Enter your First Name:</label>
+                        <input type="text" id="fName" class="form-control form-control-lg" placeholder="First Name" />
+                      </div>
+        
+                      <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="lName">Please Enter your Last Name:</label>
+                        <input type="text" id="lName" class="form-control form-control-lg" placeholder="Last Name"/>
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="email">Please Enter your Email:</label>
+                        <input type="email" id="email" class="form-control form-control-lg" placeholder="Email" />
+                      </div>
+        
+                      <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="pass1">Create your Password:</label>
+                        <input type="password" id="pass1" class="form-control form-control-lg" placeholder="Password"/>
+                      </div>
+
+                      <button class="btn btn-outline-light btn-lg px-5" type="submit">Submit</button>
+                  </form>
+>>>>>>> GuyEzra
                 </div>
     
               </div>

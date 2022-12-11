@@ -1,7 +1,15 @@
 from django.db import models
+<<<<<<< HEAD
 
 # Create your models here.
 
+=======
+from django.contrib.auth.models import User
+
+# Create your models here.
+
+
+>>>>>>> GuyEzra
 class Patient(models.Model):
     GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'),)
     SMOKE_CHOICES = (('Y', 'Yes'), ('N', 'No'),)
@@ -15,6 +23,10 @@ class Patient(models.Model):
     smoking = models.CharField(max_length=1, choices=SMOKE_CHOICES)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> GuyEzra
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 

@@ -25,9 +25,15 @@ h1{
 }
 
 #logo{
+<<<<<<< HEAD
     width: 60px;
     height: 55px;
     margin: 0px;
+=======
+  width: 60px;
+  height: 55px;
+  margin: 0px;
+>>>>>>> GuyEzra
 }
 
 #back{
@@ -239,10 +245,15 @@ height: 100%;
 #signup{
   margin-top: 10px;
 }
+<<<<<<< HEAD
   
 .messegas{
   margin-top: 100px;
   font-size: 50px;
 }
+=======
+
+
+>>>>>>> GuyEzra
 
 
