@@ -9,7 +9,7 @@ from django.contrib.auth import logout as django_logout
 
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')
   
 def style(request):
     return render(request, 'style.css')
@@ -134,6 +134,14 @@ def signout(request):
     logout(request)
     messages.success(request, 'logged out')
     return redirect('home')
+
+def pharmacy(request):
+    return render(request, 'pharmacy.html')
+
+def blood_donation(request):
+    return render(request, 'blood_donation.html')
+
+        
     
 
 
