@@ -4,14 +4,13 @@ from . import views
 
 urlpatterns = [
     path('',views.home, name="home"),
-    path('', views.style, name="style"),
     path('signup/', views.signup, name="signup"),
     path('signin/', views.signin, name="signin"),
     path('signin/signout', views.signout, name="backhome"),
     path('signout/', views.signout, name="signout"),
     path('pharmacy/', views.pharmacy, name="pharmacy"),
     path('blood_donation/', views.blood_donation, name="blood_donation"),
-    
+    path('test/', views.test, name="test"),
 ]
 
 '''

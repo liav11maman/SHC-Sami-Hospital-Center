@@ -9,70 +9,8 @@ from django.contrib.auth import logout as django_logout
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
   
-def style(request):
-    return render(request, 'style.css')
-
-'''
-def manager_login(request):
-    form = UserCreationForm()
-    context = {'form':form}
-    return render(request, 'manager_login_signup.html',context)        
-
-def loginPatient(request):
-    page = 'login'
-    form = UserCreationForm()
-    if request == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        try:
-            user =User.objects.get(username=username)
-        except:
-            messages.error(request, 'User does not exist')
-
-        user = authenticate(request, username=username, password=password)    
-
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.error(request, 'Username or password does not exist')
-
-
-    context={'page':page, 'form':form}
-    return render(request, 'patient_login_signup.html',context)
-
-def loginDoctor(request):
-    page = 'login'
-    if request == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        try:
-            user = User.objects.get(username=username)
-        except:
-            messages.error(request, 'User does not exist')
-
-    context={'page':page }
-    return render(request, 'doctor_login_signup.html',context)
-
-
-def signup(request):
-    return render(request, 'signup.html')
-
-def signup2(request):
-    page = 'signup'
-    context = {}
-    return render(request, 'doctor_login_signup.html', context)    
-
-def logout(request):
-    logout(request)
-    return redirect('home')
-'''
-'''----------------------------------test register-------------------------------------------'''
-
 def signup(request):
     
     if request.method == "POST":
@@ -141,7 +79,8 @@ def pharmacy(request):
 def blood_donation(request):
     return render(request, 'blood_donation.html')
 
-        
+def test(request):
+    return render(request, 'test.html')        
     
 
 
