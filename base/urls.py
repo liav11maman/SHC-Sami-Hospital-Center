@@ -12,18 +12,3 @@ urlpatterns = [
     path('blood_donation/', views.blood_donation, name="blood_donation"),
     path('test/', views.test, name="test"),
 ]
-
-'''
-    path('signup/', views.signup_test, name="signup"),
-    path('signin/', views.signin_test, name="signin"),
-    path('signout/', views.signout_test, name="signout"),
-   
-    path('doctor_login/', views.loginDoctor, name="doctor_login"),
-    path('doctor_login/doctor_signup', views.signup2, name="signup_doctor"),
-
-    path('manager_login/', views.manager_login, name="manager_login"),
-    
-    path('patient_login/', views.signin_test, name="signin"),
-    path('patient_login/patient_signup/', views.signup_test, name="signup"),
-    path('signout/', views.signout_test, name="signout"),
- '''
