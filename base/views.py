@@ -7,12 +7,15 @@ from django.contrib import messages
 
 def home(request):
     return render(request, 'home.html')
-  
+
+
 def style(request):
     return render(request, 'style.css')
 
+
 def manager_login(request):
-    return render(request, 'manager_login.html')        
+    return render(request, 'manager_login.html')
+
 
 def loginPatient(request):
     page = 'login'
@@ -21,12 +24,13 @@ def loginPatient(request):
         password = request.POST.get('password')
 
         try:
-            user =User.objects.get(username=username)
+            user = User.objects.get(username=username)
         except:
             messages.error(request, 'User does not exist')
 
-    context={'page':page}
-    return render(request, 'patient_login_signup.html',context)
+    context = {'page': page}
+    return render(request, 'patient_login_signup.html', context)
+
 
 def loginDoctor(request):
     page = 'login'
@@ -39,8 +43,8 @@ def loginDoctor(request):
         except:
             messages.error(request, 'User does not exist')
 
-    context={'page':page }
-    return render(request, 'doctor_login_signup.html',context)
+    context = {'page': page}
+    return render(request, 'doctor_login_signup.html', context)
 
 
 def signup(request):
@@ -48,14 +52,20 @@ def signup(request):
     context = {}
     return render(request, 'patient_login_signup.html', context)
 
+
 def signup2(request):
     page = 'signup'
     context = {}
-    return render(request, 'doctor_login_signup.html', context)    
+    return render(request, 'doctor_login_signup.html', context)
+
 
 def patient(request):
     return render(request, 'patient_page.html')
 
+
 def pharmacy(request):
     return render(request, 'pharmacy.html')
-        
+
+
+def aboutus(request):
+    return render(request, 'aboutus.html')

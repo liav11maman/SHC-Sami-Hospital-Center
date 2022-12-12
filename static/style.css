@@ -245,4 +245,35 @@ height: 100%;
   font-size: 50px;
 }
 
+.title_aboutus{
 
+  margin-top: 50px;
+}
+
+.item11{
+  background-image: url("images/about2new.png");
+  margin-top: 5%;
+            width: 1366;
+            height: 768;
+  
+}
+.item12{
+  
+  display: block;
+  margin-block-start: 5em;
+  margin-block-end: 5em;
+  margin-inline-start: 5px;
+  margin-inline-end: 5px;
+  font-size: smaller;
+  font-style: italic;
+}
+
+/* .container{
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+}
+.contact-box{
+  background: #fff;
+  display: flex;
+} */
