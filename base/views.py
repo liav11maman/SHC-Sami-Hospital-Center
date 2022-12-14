@@ -73,14 +73,15 @@ def signout(request):
     messages.success(request, 'logged out')
     return redirect('home')
 
+
 def pharmacy(request):
     return render(request, 'pharmacy.html')
 
 def blood_donation(request):
     return render(request, 'blood_donation.html')
 
-def test(request):
-    return render(request, 'test.html')        
+def aboutus(request):
+    return render(request, 'aboutus.html')
     
 
 

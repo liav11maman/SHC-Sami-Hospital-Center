@@ -10,5 +10,5 @@ urlpatterns = [
     path('signout/', views.signout, name="signout"),
     path('pharmacy/', views.pharmacy, name="pharmacy"),
     path('blood_donation/', views.blood_donation, name="blood_donation"),
-    path('test/', views.test, name="test"),
+    path('aboutus', views.aboutus, name="aboutus"),
 ]
