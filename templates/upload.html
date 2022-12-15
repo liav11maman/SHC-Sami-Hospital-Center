@@ -213,26 +213,10 @@
     <!-- nav end -->
     
     <br><br><br><br>
-    <h1 style="text-align:center;">Doctor Panel</h1>
-
-    
 
 
-    <br><br><br>
-    {% if user.is_authenticated %}
-    <h3 class="testing" style="padding-left: 50px;">Hello {{request.user.first_name}}!</h3>
-    <h4 class="testing" style="padding-left: 50px;">You're successfully logged in.</h4>
-    {% endif %}
-    
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-    <strong>Message:</strong> {{ message }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
-    {% endfor %}
-    
+
+    <br><br><br>    
     <!-- partial:index.partial.html -->
   <nav class="menu" tabindex="0">
     <div class="smartphone-menu-trigger"></div>
