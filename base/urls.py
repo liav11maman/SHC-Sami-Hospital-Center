@@ -11,5 +11,4 @@ urlpatterns = [
     path('pharmacy/', views.pharmacy, name="pharmacy"),
     path('blood_donation/', views.blood_donation, name="blood_donation"),
     path('patients_information/', views.show_patients_information, name="patients_information"),
-    path('test/', views.test, name="test"),
 ]
