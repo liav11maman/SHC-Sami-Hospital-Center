@@ -5,7 +5,11 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
-from django.contrib.auth import logout as django_logout
+from django.contrib.auth.decorators import login_required
+from .models import Patient
+from django.core.files.storage import FileSystemStorage
+from django.views.generic import TemplateView
+
 
 
 def home(request):
@@ -59,12 +63,33 @@ def signin(request):
             login(request, user)
             fname = user.first_name
             # messages.success(request, "Logged In Sucessfully!!")
-            return render(request, "index.html",{"fname":fname})
+            #return render(request, "patient_panel.html",{"fname":fname})
+            return redirect('patient_panel')
         else:
             messages.error(request, "Bad Credentials!!")
             return redirect('home')
     
     return render(request, "signin.html")
+
+def signin2(request):
+   
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        pass1 = request.POST.get('pass1')
+        
+        user = authenticate(username=username, password=pass1)
+        
+        if user is not None:
+            login(request, user)
+            fname = user.first_name
+            # messages.success(request, "Logged In Sucessfully!!")
+            #return render(request, "patient_panel.html",{"fname":fname})
+            return redirect('doctor_panel')
+        else:
+            messages.error(request, "Bad Credentials!!")
+            return redirect('home')
+    
+    return render(request, "signin2.html")
 
 
 
@@ -82,8 +107,23 @@ def blood_donation(request):
 
 def aboutus(request):
     return render(request, 'aboutus.html')
-    
 
+@login_required(login_url='signin')    
+def patient_panel(request):
+    return render(request, 'patient_panel.html')
 
+@login_required(login_url='signin2')
+def doctor_panel(request):
+    return render(request, 'doctor_panel.html')
 
-        
+def show_patients_information(request):
+    pt = Patient.objects.all()
+    return render(request, 'patients_information.html', {'pt':pt})
+
+def upload(request):
+    if request.method == 'POST':
+        uploaded_file = request.FILES['document']
+        fs = FileSystemStorage()
+        fs.save(uploaded_file.name, uploaded_file)
+    return render(request, 'upload.html')
+
