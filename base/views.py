@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.contrib.auth import logout as django_logout
+from .models import Patient
 
 
 def home(request):
@@ -82,7 +83,8 @@ def blood_donation(request):
 def test(request):
     return render(request, 'test.html')        
     
-
-
+def show_patients_information(request):
+    pt= Patient.objects.all()
+    return render(request, 'patients_information.html', {'pt':pt})
 
         
