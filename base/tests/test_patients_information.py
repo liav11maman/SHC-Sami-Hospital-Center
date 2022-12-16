@@ -1,8 +1,10 @@
 from django.test import TestCase
 
+
 class PatientsInformationTest(TestCase):
 
     def test_patients_information_html(self):
+        # Testing the html table values
         self.assertHTMLEqual(
             '<td scope="col">First Name</td>',
             '<td scope="col">First Name</td>',
