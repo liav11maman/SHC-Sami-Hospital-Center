@@ -74,7 +74,6 @@ def signup2(request):
         myuser = User.objects.create_user(username, email, pass1)
         myuser.first_name = fname
         myuser.last_name = lname
-        # myuser.is_active = False
         myuser.save()
         messages.success(request, "Your Account has been created succesfully!! ")
         
@@ -97,8 +96,6 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            # messages.success(request, "Logged In Sucessfully!!")
-            #return render(request, "patient_panel.html",{"fname":fname})
             return redirect('patient_panel')
         else:
             messages.error(request, "Bad Credentials!!")
@@ -118,8 +115,6 @@ def signin2(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            # messages.success(request, "Logged In Sucessfully!!")
-            #return render(request, "patient_panel.html",{"fname":fname})
             return redirect('doctor_panel')
         else:
             messages.error(request, "Bad Credentials!!")
