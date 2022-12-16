@@ -10,7 +10,6 @@ urlpatterns = [
     path('signup2/', views.signup2, name="signup2"),
     path('signin/', views.signin, name="signin"),
     path('signin2/', views.signin2, name="signin2"),
-    #path('signin/signout', views.signout, name="backhome"),
     path('signout/', views.signout, name="signout"),
     
     
