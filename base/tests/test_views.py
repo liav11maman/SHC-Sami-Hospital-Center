@@ -20,19 +20,4 @@ class TestViews(TestCase):
         response = self.client.get(reverse('signup'))
         self.assertTemplateUsed(response, 'signup.html')
 
-    def test_pharmacy(self):
-        response = self.client.get(reverse('pharmacy'))
-        self.assertTemplateUsed(response, 'pharmacy.html')
-
-    def test_blood_donation(self):
-        response = self.client.get(reverse('blood_donation'))
-        self.assertTemplateUsed(response, 'blood_donation.html')
-
-    def test_aboutus(self):
-        response = self.client.get(reverse('aboutus'))
-        self.assertTemplateUsed(response, 'aboutus.html')
-
- 
-
-    
     

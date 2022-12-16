@@ -202,6 +202,36 @@
           .menu:focus .smartphone-menu-trigger {
             pointer-events: none;
           }
+
+          /*----------table--------*/
+        }
+
+        html,
+        body,
+        .intro {
+          height: 100%;
+        }
+
+        .gradient-custom-2 {
+        
+          background: linear-gradient(to right, rgb(44, 169, 75), rgb(43, 147, 211))
+        }
+
+        table td,
+        table th {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        thead th,
+        tbody th {
+          color: #fff;
+        }
+
+        tbody td {
+          font-weight: 500;
+          color: rgba(255,255,255,.65);
         }
     </style>
 </head>
@@ -212,49 +242,58 @@
       <img src="/static/doctor.png" alt="Profile Pic" />
       <br><br>
       <h6>Doctor</h6>
-      <h2>{{request.user.first_name}}</h2>
+      <h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
     </header>
     <ul>
-      <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="#"><span>Appointments</span></a></li>
-      <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="patients_information"><span>Patient Information</span></a></li>
+      <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_panel' %}"><span>Doctor Panel</span></a></li>
+      <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_pat_info' %}"><span>Patient Information</span></a></li>
+      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'upload' %}"><span>Upload Files</span></a></li>
+    </ul>
     </ul>
   </nav>
-    <br><br><br><br><br><br>
-    <div class="container">
-      <h1>Patients Information</h1>
-    
-      <p><strong>Below displayed all the hospital patients:</strong></p>
-    </div>
-    
-    <br><br>
-      <table id="t" class="table">
-          <thead>
-            <tr>
-              <td scope="col"><strong>First Name</strong></td>
-              <td scope="col"><strong>Last Name</strong></td>
-              <td scope="col"><strong>Age</strong></td>
-              <td scope="col"><strong>Adress</strong></td>
-              <td scope="col"><strong>Disease</strong></td>
-              <td scope="col"><strong>ID Number</strong></td>
-              <td scope="col"><strong>Smoking</strong></td>
-              <td scope="col"><strong>Gender</strong></td>
-            </tr>
-          </thead>
-          <tbody>
-              {% for pts in pt %}
-              <tr>
-                  <td scope="row">{{ pts.first_name }}</td>
-                  <td scope="row">{{ pts.last_name }}</td>
-                  <td scope="row">{{ pts.age }}</td>
-                  <td scope="row">{{ pts.address }}</td>
-                  <td scope="row">{{ pts.disease }}</td>
-                  <td scope="row">{{ pts.id_num }}</td>
-                  <td scope="row">{{ pts.smoking }}</td>
-                  <td scope="row">{{ pts.gender }}</td>
-              </tr>
-              {% endfor %}
-          </tbody>
-      </table>
+   
+      <section class="intro">
+        <div class="gradient-custom-2 h-100">
+          <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="table-responsive">
+                    <table class="table table-dark table-bordered mb-0">
+                      <thead>
+                        <tr>
+                          <td scope="col"><strong>First Name</strong></td>
+                          <td scope="col"><strong>Last Name</strong></td>
+                          <td scope="col"><strong>Age</strong></td>
+                          <td scope="col"><strong>Adress</strong></td>
+                          <td scope="col"><strong>Disease</strong></td>
+                          <td scope="col"><strong>ID Number</strong></td>
+                          <td scope="col"><strong>Smoking</strong></td>
+                          <td scope="col"><strong>Gender</strong></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for pts in pt %}
+                          <tr>
+                              <td scope="row">{{ pts.first_name }}</td>
+                              <td scope="row">{{ pts.last_name }}</td>
+                              <td scope="row">{{ pts.age }}</td>
+                              <td scope="row">{{ pts.address }}</td>
+                              <td scope="row">{{ pts.disease }}</td>
+                              <td scope="row">{{ pts.id_num }}</td>
+                              <td scope="row">{{ pts.smoking }}</td>
+                              <td scope="row">{{ pts.gender }}</td>
+                          </tr>
+                          {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 </html>
 </body>
 

@@ -49,6 +49,41 @@ def signup(request):
         
     return render(request, "signup.html")
 
+def signup2(request):
+    
+    if request.method == "POST":
+        username = request.POST.get('username')
+        fname = request.POST.get('fname')
+        lname = request.POST.get('lname')
+        email = request.POST.get('email')
+        pass1 = request.POST.get('pass1')
+        
+        if User.objects.filter(username=username):
+            messages.error(request, "Username already exist! Please try some other username.")
+            return redirect('home')
+        
+        if User.objects.filter(email=email).exists():
+            messages.error(request, "Email Already Registered!!")
+            return redirect('home')
+        
+        if len(username)>20:
+            messages.error(request, "Username must be under 20 charcters!!")
+            return redirect('home')
+        
+        
+        myuser = User.objects.create_user(username, email, pass1)
+        myuser.first_name = fname
+        myuser.last_name = lname
+        # myuser.is_active = False
+        myuser.save()
+        messages.success(request, "Your Account has been created succesfully!! ")
+        
+        return redirect('signin2')
+        
+        
+    return render(request, "signup2.html")
+
+
 
 
 def signin(request):
@@ -70,6 +105,7 @@ def signin(request):
             return redirect('home')
     
     return render(request, "signin.html")
+
 
 def signin2(request):
    
@@ -99,12 +135,15 @@ def signout(request):
     return redirect('home')
 
 
+@login_required(login_url='signin')
 def pharmacy(request):
     return render(request, 'pharmacy.html')
 
+@login_required(login_url='signin')
 def blood_donation(request):
     return render(request, 'blood_donation.html')
 
+@login_required(login_url='signin')
 def aboutus(request):
     return render(request, 'aboutus.html')
 
@@ -116,9 +155,11 @@ def patient_panel(request):
 def doctor_panel(request):
     return render(request, 'doctor_panel.html')
 
+@login_required(login_url='signin2')
 def show_patients_information(request):
     pt = Patient.objects.all()
     return render(request, 'patients_information.html', {'pt':pt})
+
 
 def upload(request):
     if request.method == 'POST':
@@ -127,3 +168,5 @@ def upload(request):
         fs.save(uploaded_file.name, uploaded_file)
     return render(request, 'upload.html')
 
+def test(request):
+    return render(request, 'test.html')

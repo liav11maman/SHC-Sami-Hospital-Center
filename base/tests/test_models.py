@@ -6,6 +6,7 @@ class TestModels(TestCase):
 
 
     def setUp(self):
+        # Creating patient and doctor objects for the test
         self.patient1 = Patient.objects.create(
             first_name = 'first_name_patient1',
             last_name = 'last_name_patient1',
@@ -29,53 +30,64 @@ class TestModels(TestCase):
   
     
     def test_patient1_doctor1_first_name(self):
+        # Test function to test the doctor and patient first name 
         self.assertTrue(self.patient1.first_name)
         self.assertTrue(self.doctor1.first_name)
         self.assertNotEqual(self.patient1.first_name, self.doctor1.first_name)
 
 
     def test_patient1_doctor1_last_name(self):
+        # Test function to test the doctor and patient last name
         self.assertTrue(self.patient1.last_name)
         self.assertTrue(self.doctor1.last_name)
         self.assertNotEqual(self.patient1.last_name, self.doctor1.last_name)
 
 
     def test_patient1_doctor1_age(self):
+        # Test function to test the doctor and patient age
         self.assertTrue(self.patient1.age)
         self.assertTrue(self.doctor1.age)
         self.assertNotEqual(self.patient1.age, self.doctor1.age)
 
 
     def test_patient1_address(self):
+        # Test function to test the patient address
         self.assertTrue(self.patient1.address)
 
 
     def test_patient1_diesease(self):
+        # Test function to test the patient diesease
         self.assertTrue(self.patient1.disease)
 
 
     def test_doctor1_specialization(self):
+        # Test function to test the doctor specialization
         self.assertTrue(self.doctor1.specialization)
 
 
     def test_doctor1_educational_institution(self):
+        # Test function to test the doctor educational institution
         self.assertTrue(self.doctor1.educational_institution)
 
     
     def test_doctor1_experience(self):
+        # Test function to test the doctor experience
         self.assertTrue(self.doctor1.experience)
 
 
     def test_patient1_doctor1_id_num(self):
+         # Test function to test the doctor and patient id numbers
         self.assertTrue(self.patient1.id_num)
         self.assertTrue(self.doctor1.id_num)
         self.assertEqual(self.patient1.id_num, self.doctor1.id_num)
 
 
     def test_patient1_smoking(self):
+        # Test function to test the patient smoking
         self.assertTrue(self.patient1.smoking)
 
 
     def test_patient1_doctor1_gender(self):
+        # Test function to test the doctor and patient gender
         self.assertTrue(self.patient1.gender)
         self.assertNotEqual(self.patient1.gender, self.doctor1.gender)

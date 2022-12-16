@@ -68,10 +68,6 @@ td{
     padding-right: 20px;
 }
 
-footer {
-    background-color: black;
-    text-align: left;
-}
 
 #copy{
     text-align: left;
@@ -233,5 +229,11 @@ height: 100%;
   
 #signup{
   margin-top: 10px;
+}
+
+.testing{
+  position: absolute;
+  font-family: 'Roboto Condensed', sans-serif;
+  bottom: 300px;
 }
 
