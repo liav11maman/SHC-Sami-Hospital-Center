@@ -1,0 +1,239 @@
+.glow {
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #eeeeee, 0 0 20px #2681ff, 0 0 30px #2681ff, 0 0 40px #2681ff, 
+                   0 0 50px #2681ff, 0 0 60px #2681ff, 0 0 70px #2681ff;
+    }
+    to {
+      text-shadow: 0 0 20px #eeeeee, 0 0 30px #00c7fe, 0 0 40px #00c7fe, 0 0 50px #00c7fe, 
+                   0 0 60px #00c7fe, 0 0 70px #00c7fe, 0 0 80px #00c7fe;
+    }
+}
+
+
+.logo{
+  width: 60px;
+  height: 55px;
+  margin: 0px;
+}
+
+#back{
+    position: relative;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 180px;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#item1{
+    width: 1690px;
+    height: 750px;
+}
+
+td{
+    border: 50px solid white;
+}
+
+#item2{
+    width: 270px;
+    height: 270px;
+}
+
+#item4{
+    width: 270px;
+    height: 270px;
+}
+
+.user{
+    margin: auto;
+}
+
+.text-block2{
+    position: absolute;
+    bottom: 700px;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#copy{
+    text-align: left;
+}
+
+#about{
+    width: 1690px;
+    height: 900px;
+}
+
+#pat{
+    text-align: center;
+}
+
+hr.solid{
+    border: 2px solid #bbb;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.button-36 {
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-36:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+}
+
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.gradient-custom {
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgb(17, 187, 203), rgba(37, 117, 252, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(44, 169, 75), rgb(43, 104, 211))
+}
+  
+#signup{
+  margin-top: 10px;
+}
+
+.testing{
+  position: absolute;
+  font-family: 'Roboto Condensed', sans-serif;
+  bottom: 300px;
+}
+
