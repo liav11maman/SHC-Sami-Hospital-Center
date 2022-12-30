@@ -20,9 +20,9 @@ class TestUrls(SimpleTestCase):
         url = reverse('signin')
         self.assertEquals(resolve(url).func, signin)
 
-    def test_backhome_resolves(self):
+    def test_signout_resolves(self):
         # Testing the backhome url
-        url = reverse('backhome')
+        url = reverse('signout')
         self.assertEquals(resolve(url).func, signout)
 
     def test_pharmacy_resolves(self):

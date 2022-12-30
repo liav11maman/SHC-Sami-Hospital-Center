@@ -52,10 +52,10 @@
         
                     <div class="mb-md-5 mt-md-4 pb-5">
         
-                      <h2 class="fw-bold mb-2 text-uppercase">Patient Login</h2>
+                      <h2 class="fw-bold mb-2 text-uppercase">Doctor Login</h2>
                       <p class="text-white-50 mb-5">Welcome to the Hospital Management System</p>
                       
-                    <form method="POST" action="{% url 'signin' %}" class="mb-2">
+                    <form method="POST" action="{% url 'signin2' %}" class="mb-2">
                       {% csrf_token %}
                       <div class="form-group form-outline form-white mb-4">
                           <label for="username">Username</label>
@@ -79,7 +79,7 @@
         
                     <div>
                       <p class="mb-0">Don't have an account?</p>
-                      <a id="signup" class="btn btn-outline-light btn-lg px-5" type="submit" href="{% url 'signup' %}">Sign Up</a>
+                      <a id="signup" class="btn btn-outline-light btn-lg px-5" type="submit" href="{% url 'signup2' %}">Sign Up</a>
                     </div>
         
                   </div>

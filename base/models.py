@@ -36,14 +36,14 @@ class Doctor(models.Model):
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
-class UnregisterdUser(models.Model):
-    first_name = models.CharField(max_length=64)
-    last_name = models.CharField(max_length=64)
-    email = models.EmailField()
-    address = models.CharField(max_length=64)
-    phone_number = models.BigIntegerField()
-    blood_type = models.CharField(max_length=3)
 
-    def __str__(self):
-        return self.first_name + ' ' + self.last_name
-        
+class Appointments(models.Model):
+
+    patientId = models.BigIntegerField()
+    doctorId = models.BigIntegerField()
+    patientName = models.CharField(max_length=40,null=True)
+    doctorName = models.CharField(max_length=40,null=True)
+    appointmentDate = models.DateField(auto_now=True)
+    description = models.TextField(null=True, blank=True, max_length=500)
+    status = models.BooleanField(default=False)
+
