@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Patient
+from .models import Patient, Doctor, Appointment
 from django.core.files.storage import FileSystemStorage
 from django.views.generic import TemplateView
 
@@ -170,3 +170,21 @@ def upload(request):
 
 def test(request):
     return render(request, 'test.html')
+
+@login_required(login_url='signin')
+def patient_appointments(request):
+    if request.method == 'POST':
+        dte = request.POST.get('date')
+        time = request.POST.get('time')
+        address = request.POST.get('address')
+        symptoms = request.POST.get('symptoms')
+    
+    appointment = Appointment.objects.create(
+        d = dte,
+        t = time,
+        a = address,
+        s = symptoms,
+    )
+    appointment.save()
+    messages.success(request, "Your Appointment Set Successfully!")
+    return redirect('patient_panel')

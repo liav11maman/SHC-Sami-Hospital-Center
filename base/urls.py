@@ -18,6 +18,7 @@ urlpatterns = [
     path('pharmacy/', views.pharmacy, name="pharmacy"),
     path('blood_donation/', views.blood_donation, name="blood_donation"),
     path('aboutus/', views.aboutus, name="aboutus"),
+    path('patient_appointments/', views.patient_appointments, name="patient_appointments"),
 
     
 
