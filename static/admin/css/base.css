@@ -12,7 +12,7 @@ html[data-theme="light"],
 
     --body-fg: #333;
     --body-bg: #fff;
-    --body-quiet-color: ##000000E6;
+    --body-quiet-color: #000000E6;
     --body-loud-color: #000;
     font-weight: bold;
 
@@ -40,15 +40,15 @@ html[data-theme="light"],
 
     --darkened-bg: #f8f8f8; /* A bit darker than --body-bg */
     --selected-bg: #e4e4e4; /* E.g. selected table cells */
-    --selected-row:#000000E6;
+    --selected-row: #f8f8f8;
 
     --button-fg: #000000E6;
     --button-bg: var(--primary);
     --button-hover-bg: #609ab6;
     --default-button-bg: var(--secondary);
     --default-button-hover-bg: #205067;
-    --close-button-bg: #747474;
-    --close-button-hover-bg: #333;
+    --close-button-bg: #18A558;
+    --close-button-hover-bg: #A3EBB1;;
     --delete-button-bg: #ba2121;
     --delete-button-hover-bg: #a41515;
 
@@ -154,7 +154,7 @@ h1 {
     margin: 0 0 20px;
     font-weight: bold;
     font-size: 1.25rem;
-    color: #2A3756;
+    color: #21B6A8;
 }
 
 h2 {
@@ -740,6 +740,7 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
 .deletelink {
     padding-left: 16px;
     background: url(../img/icon-deletelink.svg) 0 1px no-repeat;
+    width: 50px;
 }
 
 a.deletelink:link, a.deletelink:visited {
