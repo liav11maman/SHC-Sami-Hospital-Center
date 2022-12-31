@@ -22,6 +22,7 @@ class Patient(models.Model):
 
 class Doctor(models.Model):
     GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'),)
+    DOCTOR_OF_THE_MONTH_CHOICE = (('Y', 'Yes'), ('N', 'No'))
 
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
@@ -31,6 +32,7 @@ class Doctor(models.Model):
     experience = models.PositiveIntegerField()
     id_num = models.BigIntegerField()
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    doctor_of_the_month = models.CharField(max_length=1, choices=DOCTOR_OF_THE_MONTH_CHOICE)
     
     def __str__(self):
         return self.first_name + ' ' + self.last_name

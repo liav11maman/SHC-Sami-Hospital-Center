@@ -174,13 +174,13 @@ def test(request):
 @login_required(login_url='signin')
 def patient_appointments(request):
     if request.method == 'POST':
-        dte = request.POST.get('date')
+        date = request.POST.get('date')
         time = request.POST.get('time')
         address = request.POST.get('address')
         symptoms = request.POST.get('symptoms')
     
     appointment = Appointment.objects.create(
-        d = dte,
+        d = date,
         t = time,
         a = address,
         s = symptoms,
@@ -188,3 +188,4 @@ def patient_appointments(request):
     appointment.save()
     messages.success(request, "Your Appointment Set Successfully!")
     return redirect('patient_panel')
+    

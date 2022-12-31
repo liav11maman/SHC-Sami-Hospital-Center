@@ -8,9 +8,9 @@ class PatientAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name', 'age', 'address', 'id_num', 'disease', 'smoking', 'gender']
 
 class DoctorAdmin(admin.ModelAdmin):
-    search_fields = ['first_name', 'last_name', 'id_num', 'specialization', 'experience', 'gender']
-    list_filter = ['specialization', 'experience']
-    list_display = ['first_name', 'last_name', 'age', 'id_num', 'educational_institution', 'specialization', 'experience', 'gender']
+    search_fields = ['first_name', 'last_name', 'id_num', 'specialization', 'experience', 'gender', 'doctor_of_the_month']
+    list_filter = ['specialization', 'experience', 'doctor_of_the_month']
+    list_display = ['first_name', 'last_name', 'age', 'id_num', 'educational_institution', 'specialization', 'experience', 'gender', 'doctor_of_the_month']
 
 
 admin.site.register(models.Patient, PatientAdmin)

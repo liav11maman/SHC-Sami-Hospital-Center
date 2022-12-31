@@ -236,6 +236,9 @@
     <h1 class="gradient-text" style="padding-left: 50px;">Welcome Back Doctor {{request.user.last_name}}!</h1>
     {% endif %}
     
+    {% if user.doctor_of_the_month %}
+    <h1 class="gradient-text" style="padding-left: 50px;">Working {{request.user.last_name}}!</h1>
+    {% endif %}
     
     <!-- partial:index.partial.html -->
   <nav class="menu" tabindex="0">
