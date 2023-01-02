@@ -24,6 +24,8 @@ urlpatterns = [
     path('doctor_panel/', views.doctor_panel, name="doctor_panel"),
     path('patients_information/', views.show_patients_information, name="doctor_pat_info"),
     path('upload/', views.upload, name="upload"),
+    path('calendar/', views.calendar, name="calendar"),
+    
 ]
 
 if settings.DEBUG:

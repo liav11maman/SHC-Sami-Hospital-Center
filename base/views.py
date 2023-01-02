@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Patient
 from django.core.files.storage import FileSystemStorage
 from django.views.generic import TemplateView
+from django.http import JsonResponse
 
 
 
@@ -168,5 +169,7 @@ def upload(request):
         fs.save(uploaded_file.name, uploaded_file)
     return render(request, 'upload.html')
 
-def test(request):
-    return render(request, 'test.html')
+
+#---------------------------------------------------------------------------
+def calendar(request):
+    return render(request, 'calendar.html')
