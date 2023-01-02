@@ -170,3 +170,33 @@ def upload(request):
 
 def test(request):
     return render(request, 'test.html')
+
+def medical_info(request):
+    return render(request, 'medical_info.html')
+
+def cardiology(request):
+    return render(request, 'cardiology.html')
+
+def pediatrics(request):
+    return render(request, 'pediatrics.html')
+
+def maternity_department(request):
+    return render(request, 'maternity_department.html')
+
+def kidney_transplant(request):
+    return render(request, 'kidney_transplant.html')
+
+def neurology(request):
+    return render(request, 'neurology.html')
+
+def cancer_medicine(request):
+    return render(request, 'cancer_medicine.html')
+
+def urology_department(request):
+    return render(request, 'urology_department.html')
+
+def ophthalmology(request):
+    return render(request, 'ophthalmology.html')
+
+def orthopedics(request):
+    return render(request, 'orthopedics.html')

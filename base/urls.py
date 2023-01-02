@@ -18,6 +18,16 @@ urlpatterns = [
     path('pharmacy/', views.pharmacy, name="pharmacy"),
     path('blood_donation/', views.blood_donation, name="blood_donation"),
     path('aboutus/', views.aboutus, name="aboutus"),
+    path('medical_info/',views.medical_info,name="medical_info"),
+    path('cardiology/',views.cardiology,name="cardiology"),
+    path('pediatrics/',views.pediatrics,name="pediatrics"),
+    path('maternity_department/',views.maternity_department,name="maternity_department"),
+    path('kidney_transplant/',views.kidney_transplant,name="kidney_transplant"),
+    path('neurology/',views.neurology,name="neurology"),
+    path('cancer_medicine/',views.cancer_medicine,name="cancer_medicine"),
+    path('urology_department/',views.urology_department,name="urology_department"),
+    path('ophthalmology/',views.ophthalmology,name="ophthalmology"),
+    path('orthopedics/',views.orthopedics,name="orthopedics"),
 
     
 
