@@ -1,4 +1,5 @@
 {% load static %}
+{% block content %}
 {% include 'navbar3.html' %}
 
 <html>
@@ -146,6 +147,7 @@
   </head>
 
 <body>
+    {% include 'navbar.html' %}
     <div class="item11">
     <h1 >SHC-Sami Hospital Center</h1>
     <h2>Information</h2>
@@ -224,3 +226,5 @@
     </div>
 </body>
 </html>
+
+{% endblock content %}
