@@ -1,5 +1,7 @@
 
+{% extends "index.html" %}
 {% block content %}
+{% include 'navbar3.html'%}
 
 
 <!DOCTYPE html>
@@ -270,8 +272,8 @@
     </style>
 </head>
 <body>
+  {% include 'navbar4.html' %}
   <h1 style="margin-bottom: -180px;"></h1>
-    {% include 'navbar3.html' %}
     <div class="p-5 text-center bg-image rounded-3" style="
     background-image: url('https://www.surveylegend.com/wordpress/wp-content/themes/sage/resources/images/img/modal/upgrade-file-upload.png');
     height: 100%;
