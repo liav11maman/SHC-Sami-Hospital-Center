@@ -461,6 +461,9 @@
         font-size: 65px;
         color: rgb(33, 213, 108);
       }
+      .menu ul li.icon-customers {
+          background-image: url("http://www.entypo.com/images//briefcase.svg");
+        }
     
     </style>
 </head>
@@ -516,6 +519,9 @@
       <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="{% url 'pharmacy' %}"><span>Pharmacy</span></a></li>
       <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'blood_donation' %}"><span>Blood Donations</span></a></li>
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'aboutus' %}"><span>About Us</span></a></li>
+      <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="{% url 'patient_appointments' %}"><span>Appointments</span></a></li>
+      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'patient_send_message' %}"><span>Send Message</span></a></li>
+      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'patient_upload' %}"><span>Upload Files</span></a></li>
     </ul>
   </nav>
 
