@@ -14,7 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Doctor',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('first_name', models.CharField(max_length=64)),
                 ('last_name', models.CharField(max_length=64)),
                 ('age', models.PositiveIntegerField()),
@@ -22,21 +23,25 @@ class Migration(migrations.Migration):
                 ('educational_institution', models.CharField(max_length=64)),
                 ('experience', models.PositiveIntegerField()),
                 ('id_num', models.BigIntegerField()),
-                ('gender', models.CharField(choices=[('M', 'Male'), ('F', 'Female')], max_length=1)),
+                ('gender', models.CharField(choices=[
+                 ('M', 'Male'), ('F', 'Female')], max_length=1)),
             ],
         ),
         migrations.CreateModel(
             name='Patient',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('first_name', models.CharField(max_length=64)),
                 ('last_name', models.CharField(max_length=64)),
                 ('age', models.PositiveIntegerField()),
                 ('address', models.CharField(max_length=64)),
                 ('disease', models.CharField(max_length=64)),
                 ('id_num', models.BigIntegerField()),
-                ('smoking', models.CharField(choices=[('Y', 'Yes'), ('N', 'No')], max_length=1)),
-                ('gender', models.CharField(choices=[('M', 'Male'), ('F', 'Female')], max_length=1)),
+                ('smoking', models.CharField(choices=[
+                 ('Y', 'Yes'), ('N', 'No')], max_length=1)),
+                ('gender', models.CharField(choices=[
+                 ('M', 'Male'), ('F', 'Female')], max_length=1)),
             ],
         ),
     ]
