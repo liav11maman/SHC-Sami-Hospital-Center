@@ -178,14 +178,15 @@ def patient_appointments(request):
         time = request.POST.get('time')
         address = request.POST.get('address')
         symptoms = request.POST.get('symptoms')
+    return render(request, 'patient_appointments.html')
     
-    appointment = Appointment.objects.create(
-        d = date,
-        t = time,
-        a = address,
-        s = symptoms,
-    )
-    appointment.save()
-    messages.success(request, "Your Appointment Set Successfully!")
-    return redirect('patient_panel')
+    # appointment = Appointment.objects.create(
+    #     d = date,
+    #     t = time,
+    #     a = address,
+    #     s = symptoms,
+    # )
+    # appointment.save()
+    # messages.success(request, "Your Appointment Set Successfully!")
+    # return redirect('patient_panel')
     
