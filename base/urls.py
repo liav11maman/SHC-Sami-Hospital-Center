@@ -23,6 +23,7 @@ urlpatterns = [
     path('patient_upload/', views.patient_upload, name="patient_upload"),
     path('patient_send_message/', views.patient_send_message,
          name="patient_send_message"),
+    path('room/', views.room, name="room"),
 
 
 
@@ -30,6 +31,9 @@ urlpatterns = [
     path('patients_information/',
          views.show_patients_information, name="doctor_pat_info"),
     path('upload/', views.upload, name="upload"),
+
+
+
 ]
 
 if settings.DEBUG:

@@ -184,6 +184,10 @@ def patient_send_message(request):
     return render(request, "patient_send_message.html")
 
 
+def room(request):
+    return render(request, 'room.html')
+
+
 def test(request):
     return render(request, 'test.html')
 
