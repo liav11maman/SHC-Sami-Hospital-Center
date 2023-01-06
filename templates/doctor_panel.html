@@ -236,9 +236,14 @@
     <h1 class="gradient-text" style="padding-left: 50px;">Welcome Back Doctor {{request.user.last_name}}!</h1>
     {% endif %}
     
-    {% if user.doctor_of_the_month == 'Y' %}
-    <h1 class="gradient-text" style="padding-left: 50px;">Working!</h1>
+    <br><br><br><br><br>
+    {% for dcs in dc %}
+    {% if dcs.doctor_of_the_month == "Y" and dcs.first_name == request.user.first_name and dcs.last_name == request.user.last_name%}
+    <strong><p style="padding-left: 50px;">YOU ARE DOCTOR OF THE MONTH</p></strong>
+    <p style="background-image: url('/static/doctor-of-the-month-medal.png');"></p>
+    <strong><p style="padding-left: 50px;">Please go to the hospital manager office to grabd your reward, WELL DONE!</p></strong>
     {% endif %}
+    {% endfor %}
     
     <!-- partial:index.partial.html -->
   <nav class="menu" tabindex="0">
@@ -266,4 +271,6 @@
 
 
 {% endblock content %}
+
+
 

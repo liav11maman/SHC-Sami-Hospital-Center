@@ -128,7 +128,6 @@ def signin2(request):
     return render(request, "signin2.html")
 
 
-
 def signout(request):
     logout(request)
     messages.success(request, 'logged out')
@@ -153,7 +152,8 @@ def patient_panel(request):
 
 @login_required(login_url='signin2')
 def doctor_panel(request):
-    return render(request, 'doctor_panel.html')
+    dc = Doctor.objects.all()
+    return render(request, 'doctor_panel.html', {'dc':dc})
 
 @login_required(login_url='signin2')
 def show_patients_information(request):
@@ -170,6 +170,7 @@ def upload(request):
 
 def test(request):
     return render(request, 'test.html')
+
 
 @login_required(login_url='signin')
 def patient_appointments(request):
@@ -189,4 +190,8 @@ def patient_appointments(request):
     # appointment.save()
     # messages.success(request, "Your Appointment Set Successfully!")
     # return redirect('patient_panel')
-    
+
+# def show_doctors_information(request):
+#     dc = Doctor.objects.all
+#     return render(request, 'doctor_panel.html', {'dc':dc})
+

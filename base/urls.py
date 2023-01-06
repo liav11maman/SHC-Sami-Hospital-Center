@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('doctor_panel/', views.doctor_panel, name="doctor_panel"),
     path('patients_information/', views.show_patients_information, name="doctor_pat_info"),
+    # path('doctor_panel/', views.show_doctors_information, name="doctor_panel"),
     path('upload/', views.upload, name="upload"),
 ]
 
