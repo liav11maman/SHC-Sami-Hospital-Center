@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Patient
 from django.core.files.storage import FileSystemStorage
 from django.views.generic import TemplateView
-
+from .models import ContactUs
 
 
 def home(request):
@@ -145,6 +145,16 @@ def blood_donation(request):
 
 @login_required(login_url='signin')
 def aboutus(request):
+    if request.method == "POST":
+        name=request.POST['name']
+        phone=request.POST['phone']
+        email=request.POST['email']
+        subject=request.POST['subject']
+        message=request.POST['message']
+
+        new_aboutUs=ContactUs(name=name,phone=phone,email=email,subject=subject,message=message)
+        new_aboutUs.save()
+
     return render(request, 'aboutus.html')
 
 @login_required(login_url='signin')    
@@ -200,3 +210,6 @@ def ophthalmology(request):
 
 def orthopedics(request):
     return render(request, 'orthopedics.html')
+
+def thanks(request):
+    return render(request, 'thanks.html')

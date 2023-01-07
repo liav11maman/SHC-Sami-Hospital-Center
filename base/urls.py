@@ -28,6 +28,7 @@ urlpatterns = [
     path('urology_department/',views.urology_department,name="urology_department"),
     path('ophthalmology/',views.ophthalmology,name="ophthalmology"),
     path('orthopedics/',views.orthopedics,name="orthopedics"),
+    path('thanks/',views.thanks,name="thanks"),
 
     
 

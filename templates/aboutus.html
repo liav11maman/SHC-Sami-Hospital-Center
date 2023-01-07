@@ -182,15 +182,16 @@
          <div class="contact-box">
             <div class="contact-left">
                 <h4>Send your request</h4>
-                <from>
+                <form class="needs-validation" method="POST" action="{% url 'thanks' %}" novalidate>
+                    {% csrf_token %}
                     <div class="input-row">
                         <div class="input-group">
                             <label>Name</label>
-                            <input type="text" placeholder="Enter Name">
+                            <input type="text" placeholder="Enter Name" name="name">
                         </div>
                         <div class="input-group">
                             <label>Phone</label>
-                            <input type="text" placeholder="+972 000000000">
+                            <input type="text" placeholder="+972 000000000" name="phone">
                         </div>
 
                     </div>
@@ -198,19 +199,19 @@
                     <div class="input-row">
                         <div class="input-group">
                             <label>Email</label>
-                            <input type="text" placeholder="youremail@gmail.com">
+                            <input type="text" placeholder="youremail@gmail.com" name="email">
                         </div>
                         <div class="input-group">
                             <label>Subject</label>
-                            <input type="text" placeholder="Sub">
+                            <input type="text" placeholder="Sub" name="subject">
                         </div>
 
                     </div>
 
                     <label>Message</label>
-                    <textarea rows="5" placeholder="Your Message"></textarea>
+                    <textarea rows="5" placeholder="Your Message" name="message"></textarea>
 
-                    <button type="submit">SEND</button>
+                    <button type="submit" ></a> SEND</button>
 
                 </from>
             </div>
