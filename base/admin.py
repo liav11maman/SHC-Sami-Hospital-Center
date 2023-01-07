@@ -15,6 +15,5 @@ class DoctorAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Patient, PatientAdmin)
 admin.site.register(models.Doctor, DoctorAdmin)
-admin.site.register(models.Appointment)
 
 

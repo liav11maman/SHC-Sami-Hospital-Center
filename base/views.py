@@ -175,9 +175,6 @@ def delete(request, id):
     data = get_object_or_404(Patient, id=id) 
     data.delete()
     return redirect('doctor_pat_info')
-
-def test(request):
-    return render(request, 'test.html')
  
 def update_patient_info(request, id):
     context ={}
@@ -191,3 +188,4 @@ def update_patient_info(request, id):
     context["form"] = form
  
     return render(request, "update_patient_info.html", context)
+

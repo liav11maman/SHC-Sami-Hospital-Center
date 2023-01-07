@@ -11,9 +11,10 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <title>Patient Panel</title>
     <style media="screen">
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik:wght@300&display=swap');
         a:link {
           text-decoration: none;
         }
@@ -207,20 +208,26 @@
         }
       .gradient-text{
         position: absolute;
-        font-family: 'Bangers', cursive;
-        bottom: 380px;
+        bottom: 500px;
         left: 250px;
-        font-size: 65px;
-        color: rgb(134, 13, 134);
+        font-size: 40px;
+        color: rgb(44, 43, 43);
+        font-family: 'Open Sans', sans-serif;
+        font-family: 'Rubik', sans-serif;
       }
       
-      .doctor_img{
+      
+      body {
+        
+        background-image: url("/static/doctor-panel-bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         width: 1465px;
-        height: 820px;
+        height: 700px;
         margin-top: 100px;
         margin-right: 0px;
-      }
-      
+        }
 
     /*-------------------header---------------*/
     </style>
@@ -233,7 +240,7 @@
 
     
     {% if user.is_authenticated %}
-    <h1 class="gradient-text" style="padding-left: 50px;">Welcome Back Doctor {{request.user.last_name}}!</h1>
+    <h1 class="gradient-text" style="padding-left: 20px;">Welcome Back, Doctor {{request.user.last_name}}!</h1>
     {% endif %}
     
     <br><br><br><br><br>
@@ -262,8 +269,6 @@
     </ul>
     </ul>
   </nav>
-
-  <img class="doctor_img" src="/static/doctor.jpg" alt="image">
   
  
 </body>
