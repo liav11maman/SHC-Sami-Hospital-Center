@@ -152,6 +152,7 @@ def blood_donation(request):
 
         new_blood_don=BloodDon(first_name=first_name,last_name=last_name,email=email,address=address,phone=phone,blood_type=blood_type)
         new_blood_don.save()
+        return render(request, 'thanks.html')
 
     return render(request, 'blood_donation.html')
 
@@ -166,6 +167,7 @@ def aboutus(request):
 
         new_aboutUs=ContactUs(name=name,phone=phone,email=email,subject=subject,message=message)
         new_aboutUs.save()
+        return render(request, 'thanks.html')
 
     return render(request, 'aboutus.html')
 

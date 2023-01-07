@@ -182,7 +182,7 @@
          <div class="contact-box">
             <div class="contact-left">
                 <h4>Send your request</h4>
-                <form class="needs-validation" method="POST" action="{% url 'thanks' %}" novalidate>
+                <form class="needs-validation" method="POST" action="{% url 'aboutus' %}" novalidate>
                     {% csrf_token %}
                     <div class="input-row">
                         <div class="input-group">
@@ -211,7 +211,7 @@
                     <label>Message</label>
                     <textarea rows="5" placeholder="Your Message" name="message"></textarea>
 
-                    <button type="submit" ></a> SEND</button>
+                    <button type="submit">SEND</button>
 
                 </from>
             </div>
