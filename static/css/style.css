@@ -30,11 +30,7 @@
 }
 
 .text-block {
-    position: absolute;
-    bottom: 180px;
-    
-    padding-left: 20px;
-    padding-right: 20px;
+    text-align: left;
 }
 
 #item1{
@@ -60,13 +56,13 @@ td{
     margin: auto;
 }
 
-.text-block2{
+/* .text-block2{
     position: absolute;
     bottom: 700px;
     
     padding-left: 20px;
     padding-right: 20px;
-}
+} */
 
 
 #copy{

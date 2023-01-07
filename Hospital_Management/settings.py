@@ -77,7 +77,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Hospital_Management.wsgi.application'
 
-
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 

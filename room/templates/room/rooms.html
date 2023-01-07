@@ -1,5 +1,6 @@
-{% include 'navbar.html' %}
+
 <!DOCTYPE html>
+
 
 <html lang="en">
 <head>
@@ -7,24 +8,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rooms</title>
+    {% include 'navbar.html' %}
+    <style>
+          body {
+            background-image: url(/static/patientSendMessage.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: 100% 100%;
+            background-position: center; 
+            
+            
+            
+        }
+                .styled {
+                    display: block;
+                    margin: auto;
+                    width: 50%;
+            border: 0;
+            line-height: 0.5;
+            padding: 50px 100px;
+            font-size: 5rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+            border-radius: 100px;
+            background-color: #c4fcff;
+            background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+            box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+            margin-bottom: 100px;
+            margin-top: 70px;
+            opacity: 0.9;
+        }
+
+        .styled:hover {
+            background-color: #c4fcff;
+        }
+
+        .styled:active {
+            box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+        }
+        h1{
+            margin-top: 40px;
+            text-align: center;
+        }
+
+    </style>
 </head>
   <body>
     <br><br>
-    <div class="p-10 lg:p-20 text-center">
-        <h1 class="text-3xl lg:text-6xl text-white">Rooms</h1>
+    <div class="titleroom">
+        <h1>Welcome to the rooms<br> please enter your room</h1>
     </div>
-    
-    <div class="w-full flex flex-wrap items-center">
+
         {% for room in rooms %}
-            <div class="w-full lg:w-1/4 px-3 py-3">
-                <div class="p-4 w-25 bg-info shadow rounded-m text-center">
-                    <h2 class="mb-5 text-2xl font-semibold">{{ room.name }}</h2>
+        <a href="{% url 'room' room.slug %}" >
+        <input class="favorite styled"
+        type="button"
+        value="{{room.name}}"></a>
+            <!-- <div class="boxtitle"> -->
+                <!-- <div class="p-4 bg-info shadow rounded-md text-center"> -->
+                    <!-- <h2 class="titlebox">{{ room.name }}</h2> -->
     
-                    <a href="{% url 'room' room.slug %}" class="px-5 py-3 block rounded-xl text-blue bg-teal-600 hover:bg-teal-700">Join</a>
-                </div>
-            </div>
+                    
+                <!-- </div> -->
+            <!-- </div> -->
+            
         {% endfor %}
-    </div>
+    
   </body>
  
 </html> 

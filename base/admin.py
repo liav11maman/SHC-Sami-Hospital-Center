@@ -1,6 +1,7 @@
 from django.contrib import admin
 from . import models
 # Register your models here.
+# from .models import Room, Message
 
 
 class PatientAdmin(admin.ModelAdmin):
@@ -21,3 +22,5 @@ class DoctorAdmin(admin.ModelAdmin):
 admin.site.register(models.Patient, PatientAdmin)
 admin.site.register(models.Doctor, DoctorAdmin)
 admin.site.register(models.Appointment)
+# admin.site.register(Room)
+# admin.site.register(Message)
