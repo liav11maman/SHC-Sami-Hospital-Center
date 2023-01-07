@@ -46,3 +46,22 @@ class ContactUs(models.Model):
     email=models.EmailField(max_length=40,null=True)
     subject=models.CharField(max_length=40,null=True)
     message=models.TextField(max_length=40,null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class BloodDon(models.Model):
+    class choicesOp(models.TextChoices):
+        publish='fefe'
+        draft='fdgf'
+
+    first_name=models.CharField(max_length=40,null=True)
+    last_name=models.CharField(max_length=40,null=True)
+    email=models.EmailField(max_length=40,null=True)
+    address=models.TextField(max_length=40,null=True)
+    phone=models.CharField(max_length=40,null=True)
+    blood_type=choicesOp.choices(max_length=2,default=choicesOp.draft)
+
+    def __str__(self):
+        return self.title

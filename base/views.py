@@ -10,6 +10,7 @@ from .models import Patient
 from django.core.files.storage import FileSystemStorage
 from django.views.generic import TemplateView
 from .models import ContactUs
+from .models import BloodDon
 
 
 def home(request):
@@ -141,6 +142,17 @@ def pharmacy(request):
 
 @login_required(login_url='signin')
 def blood_donation(request):
+    if request.method == "POST":
+        first_name=request.POST['first_name']
+        last_name=request.POST['last_name']
+        email=request.POST['email']
+        address=request.POST['address']
+        phone=request.POST['phone']
+        blood_type=request.POST['blood_type']
+
+        new_blood_don=BloodDon(first_name=first_name,last_name=last_name,email=email,address=address,phone=phone,blood_type=blood_type)
+        new_blood_don.save()
+
     return render(request, 'blood_donation.html')
 
 @login_required(login_url='signin')
