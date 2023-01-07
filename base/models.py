@@ -37,13 +37,12 @@ class Doctor(models.Model):
         return self.first_name + ' ' + self.last_name
 
 
-class Appointments(models.Model):
 
-    patientId = models.BigIntegerField()
-    doctorId = models.BigIntegerField()
-    patientName = models.CharField(max_length=40,null=True)
-    doctorName = models.CharField(max_length=40,null=True)
-    appointmentDate = models.DateField(auto_now=True)
-    description = models.TextField(null=True, blank=True, max_length=500)
-    status = models.BooleanField(default=False)
 
+class ContactUs(models.Model):
+
+    name=models.CharField(max_length=40,null=True)
+    phone=models.CharField(max_length=40,null=True)
+    email=models.EmailField(max_length=40,null=True)
+    subject=models.CharField(max_length=40,null=True)
+    message=models.TextField(max_length=40,null=True)
