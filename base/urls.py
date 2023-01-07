@@ -1,8 +1,7 @@
-from django.urls import path 
+from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-
 
 urlpatterns = [
     path('',views.home, name="home"),
@@ -18,14 +17,15 @@ urlpatterns = [
     path('pharmacy/', views.pharmacy, name="pharmacy"),
     path('blood_donation/', views.blood_donation, name="blood_donation"),
     path('aboutus/', views.aboutus, name="aboutus"),
-    path('patient_appointments/', views.patient_appointments, name="patient_appointments"),
 
-    
+
 
     path('doctor_panel/', views.doctor_panel, name="doctor_panel"),
     path('patients_information/', views.show_patients_information, name="doctor_pat_info"),
+    path('delete/<str:id>/', views.delete, name="delete"),
     # path('doctor_panel/', views.show_doctors_information, name="doctor_panel"),
     path('upload/', views.upload, name="upload"),
+    path('update_patient_info/<str:id>/', views.update_patient_info, name="update_patient_info"),
 ]
 
 if settings.DEBUG:

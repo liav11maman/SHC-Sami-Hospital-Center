@@ -3,17 +3,19 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Patient, Doctor, Appointment
+from .models import Patient, Doctor
 from django.core.files.storage import FileSystemStorage
-from django.views.generic import TemplateView
-
+from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
+from .forms import EditPatientForm
 
 
 def home(request):
     return render(request, 'index.html')
+
+    
+def patients_information(request):
+    return render(request, 'patients_information.html')
   
 def signup(request):
     
@@ -168,30 +170,24 @@ def upload(request):
         fs.save(uploaded_file.name, uploaded_file)
     return render(request, 'upload.html')
 
+@login_required(login_url='signin2')
+def delete(request, id):
+    data = get_object_or_404(Patient, id=id) 
+    data.delete()
+    return redirect('doctor_pat_info')
+
 def test(request):
     return render(request, 'test.html')
-
-
-@login_required(login_url='signin')
-def patient_appointments(request):
-    if request.method == 'POST':
-        date = request.POST.get('date')
-        time = request.POST.get('time')
-        address = request.POST.get('address')
-        symptoms = request.POST.get('symptoms')
-    return render(request, 'patient_appointments.html')
-    
-    # appointment = Appointment.objects.create(
-    #     d = date,
-    #     t = time,
-    #     a = address,
-    #     s = symptoms,
-    # )
-    # appointment.save()
-    # messages.success(request, "Your Appointment Set Successfully!")
-    # return redirect('patient_panel')
-
-# def show_doctors_information(request):
-#     dc = Doctor.objects.all
-#     return render(request, 'doctor_panel.html', {'dc':dc})
-
+ 
+def update_patient_info(request, id):
+    context ={}
+    obj = get_object_or_404(Patient, id = id)
+    form = EditPatientForm(request.POST or None, instance = obj)
+ 
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/patients_information')
+ 
+    context["form"] = form
+ 
+    return render(request, "update_patient_info.html", context)
