@@ -205,28 +205,25 @@
           .menu:focus .smartphone-menu-trigger {
             pointer-events: none;
           }
+
         }
-      .gradient-text{
-        position: absolute;
-        bottom: 500px;
-        left: 250px;
-        font-size: 40px;
-        color: rgb(44, 43, 43);
-        font-family: 'Open Sans', sans-serif;
-        font-family: 'Rubik', sans-serif;
+        .gradient-text{
+          position: absolute;
+          bottom: 75%;
+          left: 20%;
+          font-size: 40px;
+          color: rgb(44, 43, 43);
+          font-family: 'Open Sans', sans-serif;
+          font-family: 'Rubik', sans-serif;
       }
       
       
       body {
-        
         background-image: url("/static/doctor-panel-bg.jpg");
-        background-position: center;
+        background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
-        width: 1465px;
-        height: 700px;
-        margin-top: 100px;
-        margin-right: 0px;
+        width: 100%;
         }
 
     /*-------------------header---------------*/
@@ -244,14 +241,14 @@
     {% endif %}
     
     <br><br><br><br><br>
-    {% for dcs in dc %}
+    <!-- {% for dcs in dc %}
     {% if dcs.doctor_of_the_month == "Y" and dcs.first_name == request.user.first_name and dcs.last_name == request.user.last_name%}
     <strong><p style="padding-left: 50px;">YOU ARE DOCTOR OF THE MONTH</p></strong>
     <p style="background-image: url('/static/doctor-of-the-month-medal.png');"></p>
     <strong><p style="padding-left: 50px;">Please go to the hospital manager office to grabd your reward, WELL DONE!</p></strong>
     {% endif %}
     {% endfor %}
-    
+     -->
     <!-- partial:index.partial.html -->
   <nav class="menu" tabindex="0">
     <div class="smartphone-menu-trigger"></div>

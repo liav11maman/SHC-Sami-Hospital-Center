@@ -189,3 +189,6 @@ def update_patient_info(request, id):
  
     return render(request, "update_patient_info.html", context)
 
+
+def doctor_of_the_month(request):
+    return render(request, 'doctor_of_the_month.html')

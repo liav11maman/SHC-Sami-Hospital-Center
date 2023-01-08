@@ -26,6 +26,7 @@ urlpatterns = [
     # path('doctor_panel/', views.show_doctors_information, name="doctor_panel"),
     path('upload/', views.upload, name="upload"),
     path('update_patient_info/<str:id>/', views.update_patient_info, name="update_patient_info"),
+    path('doctor_of_the_month/', views.doctor_of_the_month, name="doctor_of_the_month"),
 ]
 
 if settings.DEBUG:
