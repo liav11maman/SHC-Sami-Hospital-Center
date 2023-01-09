@@ -2,6 +2,7 @@ from django.contrib import admin
 from . import models
 # Register your models here.
 # from .models import Room, Message
+# from room import migrations
 
 
 class PatientAdmin(admin.ModelAdmin):

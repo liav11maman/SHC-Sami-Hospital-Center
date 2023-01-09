@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+import base.apps
 
 
 class RoomConfig(AppConfig):

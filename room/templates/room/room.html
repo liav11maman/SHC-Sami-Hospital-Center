@@ -94,6 +94,19 @@
 
     }
 
+    // chatSocket.onmessage = function(e) {
+    //     const data = JSON.parse(e.data);
+
+    //     if (data.message) {
+    //         document.querySelector('#chat-messages').innerHTML += ('<b>' + data.username + '</b>: ' + data.message + '<br>');
+    //     } else {
+    //         alert('The message was empty!')
+    //     }
+
+    //     scrollToBottom();
+    // };
+
+
     chatSocket.onclose = function (e) {
         console.log('onclose')
     }
@@ -111,11 +124,11 @@
         const messageInputDom = document.querySelector('#chat-message-input');
         const message = messageInputDom.value;
 
-        // console.log({
-        //     'message': message,
-        //     'username': userName,
-        //     'room': roomName
-        // })
+        console.log({
+            'message': message,
+            'username': userName,
+            'room': roomName
+        })
 
         chatSocket.send(JSON.stringify({
             'message': message,

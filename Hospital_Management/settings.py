@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,11 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
-    'channels',
+
     'room',
 
 
 ]
+
+ASGI_APPLICATION = 'Hospital_Management.asgi.application'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

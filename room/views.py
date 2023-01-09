@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from .models import Message, Room
+import base.views
 
 
 @login_required
