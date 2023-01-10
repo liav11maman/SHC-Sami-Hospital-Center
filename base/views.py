@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Patient, Doctor
+from .models import Patient, Doctor, Appointment
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
 from .forms import EditPatientForm
@@ -250,3 +250,108 @@ def orthopedics(request):
 
 def thanks(request):
     return render(request, 'thanks.html')
+
+
+#---------------------------------------------------------------------------
+def appointment(request):
+
+    if request.method == 'POST':
+
+        your_fname = request.POST.get('your_fname')
+        your_lname= request.POST.get('your_lname')
+        your_email = request.POST.get('your_email')
+        your_phone = request.POST.get('your_phone')
+        your_date = request.POST.get('your_date')
+        your_time = request.POST.get('your_time')
+        your_description = request.POST.get('your_description')
+
+        context = {
+            'your_fname' : your_fname,
+            'your_lname' : your_lname,
+            'your_email' : your_email,
+            'your_phone' : your_phone,
+            'your_date' : your_date,
+            'your_time' : your_time,
+            'your_description' : your_description,
+        }
+
+        my_appointment = Appointment.objects.create(patient_first_name = your_fname, patient_last_name = your_lname, patient_email = your_email,
+        patient_phone_number = your_phone, appointment_date = your_date, appointment_time = your_time, description = your_description)
+        
+        my_appointment.save()
+        
+        return render(request, 'confirm_appointment.html', context)
+
+
+    return render(request, 'appointment.html')    
+
+        
+
+def confirm_appointment(request):
+    return render(request, 'confirm_appointment.html')        
+
+@login_required(login_url='signin2')
+def delete(request, id):
+    data = get_object_or_404(Patient, id=id) 
+    data.delete()
+    return redirect('doctor_pat_info')
+
+def test(request):
+    return render(request, 'test.html')
+ 
+def update_patient_info(request, id):
+    context ={}
+    obj = get_object_or_404(Patient, id = id)
+    form = EditPatientForm(request.POST or None, instance = obj)
+ 
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/patients_information')
+ 
+    context["form"] = form
+ 
+    return render(request, "update_patient_info.html", context)
+
+#--------------------live chat------------------------------
+from django.shortcuts import render, redirect
+from .models import Room, Message
+from django.http import HttpResponse, JsonResponse
+
+# Create your views here.
+def live_chat_home(request):
+    return render(request, 'live_chat_home.html')
+
+def room(request, room):
+    username = request.GET.get('username')
+    room_details = Room.objects.get(name=room)
+    return render(request, 'room.html', {
+        'username': username,
+        'room': room,
+        'room_details': room_details
+    })
+
+def checkview(request):
+    room = request.POST['room_name']
+    username = request.POST['username']
+
+    if Room.objects.filter(name=room).exists():
+        return redirect(room+'/?username='+username)
+    else:
+        new_room = Room.objects.create(name=room)
+        new_room.save()
+        return redirect(room+'/?username='+username)
+
+def send(request):
+    message = request.POST['message']
+    username = request.POST['username']
+    room_id = request.POST['room_id']
+
+    new_message = Message.objects.create(value=message, user=username, room=room_id)
+    new_message.save()
+    return HttpResponse('Message sent successfully')
+
+def getMessages(request, room):
+    room_details = Room.objects.get(name=room)
+
+    messages = Message.objects.filter(room=room_details.id)
+    return JsonResponse({"messages":list(messages.values())})

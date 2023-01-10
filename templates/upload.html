@@ -87,7 +87,13 @@
         .menu ul li.icon-calendar {
           background-image: url("http://www.entypo.com/images//calendar.svg");
         }
-    
+        .menu ul li.icon-chat {
+          background-image: url("http://www.entypo.com/images//chat.svg");
+        }
+        .menu ul li.icon-upload {
+          background-image: url("http://www.entypo.com/images//upload.svg");
+        }
+
         .menu ul li:hover {
           background-color: rgba(0, 0, 0, 0.1);
         }
@@ -302,7 +308,8 @@
       <!-- <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="#"><span>Appointments</span></a></li> -->
       <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_panel' %}"><span>Doctor Panel</span></a></li>
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_pat_info' %}"><span>Patient Information</span></a></li>
-      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'upload' %}"><span>Upload Files</span></a></li>
+      <li tabindex="0" class="icon-upload"> <a style="color:white; text-decoration:none;" href="{% url 'upload' %}"><span>Upload Files</span></a></li>
+      <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_home' %}"><span>Live Chat</span></a></li>    
     </ul>
   </nav>
  

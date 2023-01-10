@@ -93,6 +93,12 @@
         .menu ul li.icon-info {
           background-image: url("http://www.entypo.com/images/info-with-circle.svg");
         }
+        .menu ul li.icon-chat {
+          background-image: url("http://www.entypo.com/images//chat.svg");
+        }
+        .menu ul li.icon-add-to-list {
+          background-image: url("http://www.entypo.com/images//add-to-list.svg");
+        }
 
         .menu ul li:hover {
           background-color: rgba(0, 0, 0, 0.1);
@@ -494,26 +500,22 @@
     
     <br><br><br><br>
 
-    <ul class="wrapper">
+    <ul class="wrapper" style="position: absolute; bottom: 10%; left: 20%;">
         <li class="icon facebook">
           <span class="tooltip">Facebook</span>
-          <span><i class="fab fa-facebook-f"></i></span>
+          <span><a href="https://www.facebook.com/SorokaMedicalCenter/" style="color: rgb(43, 43, 43);"><i class="fab fa-facebook-f"></i></a></span>
         </li>
         <li class="icon twitter">
           <span class="tooltip">Twitter</span>
-          <span><i class="fab fa-twitter"></i></span>
-        </li>
-        <li class="icon instagram">
-          <span class="tooltip">Instagram</span>
-          <span><i class="fab fa-instagram"></i></span>
+          <span><a href="https://twitter.com/soroka_mc?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" style="color: rgb(43, 43, 43);"><i class="fab fa-twitter"></i></a></span>
         </li>
         <li class="icon github">
-          <span class="tooltip">Github</span>
-          <span><i class="fab fa-github"></i></span>
+          <span class="tooltip" >Github</span>
+          <span><a href="https://github.com/liav11maman/SHC-Sami-Hospital-Center/tree/main/templates" style="color: rgb(43, 43, 43);"><i class="fab fa-github"></i></a></span>
         </li>
         <li class="icon youtube">
           <span class="tooltip">Youtube</span>
-          <span><i class="fab fa-youtube"></i></span>
+          <span><a href="https://www.youtube.com/@SorokaMedicalCenter" style="color: rgb(43, 43, 43);"><i class="fab fa-youtube"></i></a></span>
         </li>
     </ul>
 
@@ -536,8 +538,9 @@
       <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="{% url 'pharmacy' %}"><span>Pharmacy</span></a></li>
       <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'blood_donation' %}"><span>Blood Donations</span></a></li>
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'aboutus' %}"><span>About Us</span></a></li>
-      <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href=""><span>Appointments</span></a></li>
       <li tabindex="0" class="icon-info"> <a style="color:white; text-decoration:none;" href="{% url 'medical_info' %}"><span>Medical Information</span></a></li>
+      <li tabindex="0" class="icon-add-to-list"> <a style="color:white; text-decoration:none;" href="{% url 'appointment' %}"><span>Book Appointment</span></a></li>
+      <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_home' %}"><span>Live Chat</span></a></li>
     </ul>
   </nav>
 

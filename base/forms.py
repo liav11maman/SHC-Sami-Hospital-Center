@@ -1,6 +1,7 @@
 from django import forms
 from .models import Patient
- 
+
+ #--------------Edit Patient Form-------------- 
 class EditPatientForm(forms.ModelForm):
  
     class Meta:
