@@ -180,15 +180,16 @@
          <div class="contact-box">
             <div class="contact-left">
                 <h4>Send your request</h4>
-                <from>
+                <form method="POST" action="{% url 'home' %}">
+                    {% csrf_token %}
                     <div class="input-row">
                         <div class="input-group">
                             <label>Name</label>
-                            <input type="text" placeholder="Enter Name">
+                            <input type="text" placeholder="Enter Name" required>
                         </div>
                         <div class="input-group">
                             <label>Phone</label>
-                            <input type="text" placeholder="+972 000000000">
+                            <input type="text" placeholder="+972 000000000" required>
                         </div>
 
                     </div>
@@ -196,21 +197,21 @@
                     <div class="input-row">
                         <div class="input-group">
                             <label>Email</label>
-                            <input type="text" placeholder="youremail@gmail.com">
+                            <input type="text" placeholder="youremail@gmail.com" required>
                         </div>
                         <div class="input-group">
                             <label>Subject</label>
-                            <input type="text" placeholder="Sub">
+                            <input type="text" placeholder="Sub" required>
                         </div>
 
                     </div>
 
                     <label>Message</label>
-                    <textarea rows="5" placeholder="Your Message"></textarea>
+                    <textarea rows="5" placeholder="Your Message"></textarea required>
 
                     
-                    <a type="submit">SEND</a>
-                </from>
+                    <button type="submit">SEND</button>
+                </form>
                 
             </div>
             <div class="contact-right">

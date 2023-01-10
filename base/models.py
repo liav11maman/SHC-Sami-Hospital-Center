@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from datetime import datetime
 # Create your models here.
 
@@ -24,26 +24,41 @@ class Patient(models.Model):
 class Doctor(models.Model):
     GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'),)
 
-    first_name = models.CharField(max_length=64)
-    last_name = models.CharField(max_length=64)
-    age = models.PositiveIntegerField()
-    specialization = models.CharField(max_length=64)
-    educational_institution = models.CharField(max_length=64)
-    experience = models.PositiveIntegerField()
-    id_num = models.BigIntegerField()
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    first_name = models.CharField(max_length=64, null=True)
+    last_name = models.CharField(max_length=64, null=True)
+    age = models.PositiveIntegerField(null=True)
+    specialization = models.CharField(max_length=64, null=True)
+    educational_institution = models.CharField(max_length=64, null=True)
+    experience = models.PositiveIntegerField(null=True)
+    id_num = models.BigIntegerField(null=True)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True)
     
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
 
-class Appointments(models.Model):
+class Appointment(models.Model):
 
-    patientId = models.BigIntegerField()
-    doctorId = models.BigIntegerField()
-    patientName = models.CharField(max_length=40,null=True)
-    doctorName = models.CharField(max_length=40,null=True)
-    appointmentDate = models.DateField(auto_now=True)
-    description = models.TextField(null=True, blank=True, max_length=500)
-    status = models.BooleanField(default=False)
+    patient_first_name = models.CharField(max_length=50, null=True)
+    patient_last_name = models.CharField(max_length=50, null=True)
+    patient_email = models.EmailField(max_length=50, null=True)
+    patient_phone_number = models.CharField(max_length=50, null=True)
+    appointment_date = models.DateField(auto_now_add=False, null=True, blank=True)
+    appointment_time = models.TimeField(auto_now_add=False, null=True, blank=True)
+    description = models.TextField(null=True, blank=True, max_length=1000)
 
+    def __str__(self):
+        return self.patient_first_name + ' ' + self.patient_last_name
+    
+#------------live chat------------------
+
+class Room(models.Model):
+    name = models.CharField(max_length=1000)
+
+
+    
+class Message(models.Model):
+    value = models.CharField(max_length=1000000)
+    date = models.DateTimeField(default=datetime.now, blank=True)
+    user = models.CharField(max_length=1000000)
+    room = models.CharField(max_length=1000000)

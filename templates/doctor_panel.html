@@ -11,9 +11,10 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <title>Patient Panel</title>
     <style media="screen">
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik:wght@300&display=swap');
         a:link {
           text-decoration: none;
         }
@@ -89,7 +90,13 @@
         .menu ul li.icon-calendar {
           background-image: url("http://www.entypo.com/images//calendar.svg");
         }
-    
+        .menu ul li.icon-chat {
+          background-image: url("http://www.entypo.com/images//chat.svg");
+        }
+        .menu ul li.icon-upload {
+          background-image: url("http://www.entypo.com/images//upload.svg");
+        }
+        
         .menu ul li:hover {
           background-color: rgba(0, 0, 0, 0.1);
         }
@@ -207,20 +214,24 @@
         }
       .gradient-text{
         position: absolute;
-        font-family: 'Bangers', cursive;
-        bottom: 380px;
-        left: 250px;
-        font-size: 65px;
-        color: rgb(134, 13, 134);
+        bottom: 75%;
+        left: 20%;
+        font-size: 40px;
+        color: rgb(44, 43, 43);
+        font-family: 'Open Sans', sans-serif;
+        font-family: 'Rubik', sans-serif;
       }
       
-      .doctor_img{
-        width: 1465px;
-        height: 820px;
-        margin-top: 100px;
-        margin-right: 0px;
-      }
       
+      body {
+        
+        background-image: url("/static/doctor-panel-bg.jpg");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+
+        }
 
     /*-------------------header---------------*/
     </style>
@@ -233,9 +244,17 @@
 
     
     {% if user.is_authenticated %}
-    <h1 class="gradient-text" style="padding-left: 50px;">Welcome Back Doctor {{request.user.last_name}}!</h1>
+    <h1 class="gradient-text" style="padding-left: 20px;">Welcome Back, Doctor {{request.user.last_name}}!</h1>
     {% endif %}
     
+    <br><br><br><br><br>
+    {% for dcs in dc %}
+    {% if dcs.doctor_of_the_month == "Y" and dcs.first_name == request.user.first_name and dcs.last_name == request.user.last_name%}
+    <strong><p style="padding-left: 50px;">YOU ARE DOCTOR OF THE MONTH</p></strong>
+    <p style="background-image: url('/static/doctor-of-the-month-medal.png');"></p>
+    <strong><p style="padding-left: 50px;">Please go to the hospital manager office to grabd your reward, WELL DONE!</p></strong>
+    {% endif %}
+    {% endfor %}
     
     <!-- partial:index.partial.html -->
   <nav class="menu" tabindex="0">
@@ -250,12 +269,11 @@
       <!-- <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="#"><span>Appointments</span></a></li> -->
       <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_panel' %}"><span>Doctor Panel</span></a></li>
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_pat_info' %}"><span>Patient Information</span></a></li>
-      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'upload' %}"><span>Upload Files</span></a></li>
+      <li tabindex="0" class="icon-upload"> <a style="color:white; text-decoration:none;" href="{% url 'upload' %}"><span>Upload Files</span></a></li>
+      <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_home' %}"><span>Live Chat</span></a></li>
     </ul>
     </ul>
   </nav>
-
-  <img class="doctor_img" src="/static/doctor.jpg" alt="image">
   
  
 </body>
@@ -263,4 +281,5 @@
 
 
 {% endblock content %}
+
 

@@ -1,4 +1,4 @@
-from django.urls import path 
+from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -24,8 +24,21 @@ urlpatterns = [
     path('doctor_panel/', views.doctor_panel, name="doctor_panel"),
     path('patients_information/', views.show_patients_information, name="doctor_pat_info"),
     path('upload/', views.upload, name="upload"),
-    path('calendar/', views.calendar, name="calendar"),
     
+    path('appointment/', views.appointment, name="appointment"),
+    path('confirm_appointment/', views.confirm_appointment, name="confirm_appointment"),
+    path('delete/<str:id>/', views.delete, name="delete"),
+    path('update_patient_info/<str:id>/', views.update_patient_info, name="update_patient_info"),
+
+    #-----------live chat-----------------
+    path('live_chat_home/', views.live_chat_home, name='live_chat_home'),
+    path('live_chat_home/<str:room>/', views.room, name='room'),
+    path('live_chat_home/checkview', views.checkview, name='checkview'),
+    path('send', views.send, name='send'),
+    path('getMessages/<str:room>/', views.getMessages, name='getMessages'),
+
+
+
 ]
 
 if settings.DEBUG:

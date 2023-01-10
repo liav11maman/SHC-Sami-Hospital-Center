@@ -48,6 +48,12 @@
     a {
       color: white;
     }
+    /*
+    #doc{
+      height: 295px;
+
+    }
+    */
   </style>
 </head>
 
@@ -65,7 +71,7 @@
 
     <div class="grid-item">
       <div class="card">
-        <img src="/static/doctor.png" alt="John" style="width:100%">
+        <img id="doc" src="/static/doctor.png" alt="John" style="width:100%">
         <p class="title">DOCTOR</p>
         <a href="{% url 'doctor_panel' %}" class="button-64" role="button"><span class="text">Doctor</span></a>
       </div>

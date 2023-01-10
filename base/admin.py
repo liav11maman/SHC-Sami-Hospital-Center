@@ -1,6 +1,7 @@
 from django.contrib import admin
 from . import models
 
+
 # Register your models here.
 
 class PatientAdmin(admin.ModelAdmin):
@@ -13,10 +14,18 @@ class DoctorAdmin(admin.ModelAdmin):
     list_filter = ['specialization', 'experience']
     list_display = ['first_name', 'last_name', 'age', 'id_num', 'educational_institution', 'specialization', 'experience', 'gender']
 
+class AppointmentAdmin(admin.ModelAdmin):
+    search_fields = ['patient_first_name', 'patient_last_name']
+    list_filter = ['patient_first_name', 'patient_last_name']
+    list_display = ['patient_first_name', 'patient_last_name', 'patient_email', 'patient_phone_number', 'appointment_date', 'appointment_time', 'description']
+
+
 
 admin.site.register(models.Patient, PatientAdmin)
 admin.site.register(models.Doctor, DoctorAdmin)
-admin.site.register(models.Appointments)
+admin.site.register(models.Appointment, AppointmentAdmin)
+admin.site.register(models.Room)
+admin.site.register(models.Message)
 
 
 

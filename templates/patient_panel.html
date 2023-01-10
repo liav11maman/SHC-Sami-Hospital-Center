@@ -89,6 +89,12 @@
         .menu ul li.icon-calendar {
           background-image: url("http://www.entypo.com/images//calendar.svg");
         }
+        .menu ul li.icon-add-to-list {
+          background-image: url("http://www.entypo.com/images//add-to-list.svg");
+        }
+        .menu ul li.icon-chat {
+          background-image: url("http://www.entypo.com/images//chat.svg");
+        }
     
         .menu ul li:hover {
           background-color: rgba(0, 0, 0, 0.1);
@@ -472,26 +478,38 @@
     <br><br><br><br>
 
     <ul class="wrapper">
+      <a href="https://www.facebook.com" style="color: rgb(43, 43, 43);">
         <li class="icon facebook">
           <span class="tooltip">Facebook</span>
           <span><i class="fab fa-facebook-f"></i></span>
         </li>
+      </a>
+      
+      <a href="https://www.twitter.com" style="color: rgb(43, 43, 43);">
         <li class="icon twitter">
           <span class="tooltip">Twitter</span>
           <span><i class="fab fa-twitter"></i></span>
         </li>
+      </a>
+      
+      <a href="https://www.instagram.com" style="color: rgb(43, 43, 43);">
         <li class="icon instagram">
           <span class="tooltip">Instagram</span>
           <span><i class="fab fa-instagram"></i></span>
         </li>
-        <li class="icon github">
+      </a>
+      
+      <!-- <li class="icon github">
           <span class="tooltip">Github</span>
           <span><i class="fab fa-github"></i></span>
-        </li>
+      </li> -->
+        
+      <a href="https://www.youtube.com" style="color: rgb(43, 43, 43);">
         <li class="icon youtube">
           <span class="tooltip">Youtube</span>
           <span><i class="fab fa-youtube"></i></span>
         </li>
+      </a>
     </ul>
 
 
@@ -516,16 +534,10 @@
       <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="{% url 'pharmacy' %}"><span>Pharmacy</span></a></li>
       <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'blood_donation' %}"><span>Blood Donations</span></a></li>
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'aboutus' %}"><span>About Us</span></a></li>
+      <li tabindex="0" class="icon-add-to-list"> <a style="color:white; text-decoration:none;" href="{% url 'appointment' %}"><span>Book Appointment</span></a></li>
+      <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_home' %}"><span>Live Chat</span></a></li>
     </ul>
   </nav>
-
-
-  
-
-  
-    
-    
-  
  
 </body>
 </html>
