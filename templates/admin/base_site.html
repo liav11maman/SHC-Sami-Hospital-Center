@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Hospital Manager') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">                <a class="navbar-brand" href="/">
+  <img id="logo" src="/static/logo2-fixed.png" alt="image" style="height: 55px; width: 60px; margin: 0px;"/></a><strong>   Hospital Manager System</strong></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

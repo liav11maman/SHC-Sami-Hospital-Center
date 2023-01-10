@@ -1,0 +1,271 @@
+{% extends "index.html" %}
+{% block content %}
+{% include 'navbar.html'%}
+
+<style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+    
+    .card {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .button-33 {
+      background-color: #c2fbd7;
+      border-radius: 100px;
+      box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+      color: green;
+      cursor: pointer;
+      display: inline-block;
+      font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+      padding: 7px 20px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 250ms;
+      border: 0;
+      font-size: 16px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-33:hover {
+      box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+  </style>
+
+  
+</head>
+<body>
+
+<main>
+
+<section class="py-5 text-center" style="background-color: #c4fcff;">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Pharmacy-Shop Online</h1>
+      <p class="lead text-muted">Shop now 24/7 Available Best Quality Pharmacy Store</p>
+      <p>Shop Online or In store Get <strong>FREE</strong> Delivery at Your Door</p>
+    </div>
+  </div>
+</section>
+
+<div class="album py-5">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7290000803234.jpg" alt="..." width="100%" height="230">
+          <div class="card-body">
+            <p class="card-text"><strong>Acamol</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                Analgesic and antipyretic, 500 mg, 50 capsules <br>
+                Barcode: 7290000803234</i>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>  
+              </div>
+              <p><strong>24.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7290100412169.jpg" alt="..." width="100%" height="180">
+          <div class="card-body">
+            <p class="card-text"><strong>Advil</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                For alleviating headaches, toothaches, backaches, muscle pains, menstruation and fever reduction. Anti-rheumatic inflammations<br>
+                Barcode: 7290100412169</i>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>   
+              </div>
+              <p><strong>29.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7290106064577.jpg" alt="...">
+          <div class="card-body">
+            <p class="card-text"><strong>Optalgin</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                For moderate to severe pain relief and to reduce high fever that does not respond to other treatment measures<br>
+                Barcode: 7290106064577</i>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>   
+              </div>
+              <p><strong>19.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7290010859306.jpg" alt="...">
+          <div class="card-body">
+            <p class="card-text"><strong>Otrivin</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                Otrivin in metered spray is intended for rapid relief of nasal congestion<br>
+                Barcode: 7290010859306</i>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>   
+              </div>
+              <p><strong>37.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7298087000966.jpg" alt="...">
+          <div class="card-body">
+            <p class="card-text"><strong>Voltaren</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                Gel for local treatment of pain, arthritis in adults and children over 12 years old<br>
+                Barcode: 7298087000966</i>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>   
+              </div>
+              <p><strong>69.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7290118203667.jpg" alt="...">
+          <div class="card-body">
+            <p class="card-text"><strong>Al-Rad</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                Antigen kit for self-testing of the COVID-19 virus, from an intranasal surface for testing suspected infection in people carrying the COVID-19 virus<br>
+                Barcode: 7290118203667</i>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>   
+              </div>
+               <p><strong>39.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7290008113182.jpg" alt="...">
+          <div class="card-body">
+            <p class="card-text"><strong>Dexamol Cold</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                For symptomatic relief of colds, coughs and nasal congestion accompanied by fever and pain for day and night treatment<br>
+                Barcode: 7290008113182</i>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>   
+              </div>
+              <p><strong>49.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7290008104449.jpg" alt="...">
+          <div class="card-body">
+            <p class="card-text"><strong>Dicloplast</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                Dicloplast, has a unique technology, the plaster contains a pain-relieving drug and is made of fine fabric. This is the only patch that contains a pain reliever and is suitable for muscle pain, back pain and arthritis<br>
+                Barcode: 7290008104449</i>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>   
+              </div>
+              <p><strong>69.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-xs-6">
+        <div class="card shadow-sm">
+            <img src="https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/7290000852973.jpg" alt="...">
+          <div class="card-body">
+            <p class="card-text"><strong>Strepsils</strong></p>
+            <p class="col-12 text-success"> <i>Product description: <br>
+                Strepsils - a medicine to relieve sore throats in adults and children<br>
+                Barcode: 7290000852973</i>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button class="button-33" role="button">Add to Cart</button>   
+              </div>
+              <p><strong>19.90₪</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="text-muted py-5" style="background-color: #c4fcff;">
+<div class="container">
+  <p class="float-end mb-1">
+    <a href="#">Back to top</a>
+  </p>
+</div>
+</footer>
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+
+{% endblock content %}

@@ -1,0 +1,248 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+     <title>SHC-Sami Hospital Center Info</title>
+     <style>
+    
+        h1{
+            background-position:unset;
+            margin-top: 90px;
+            /* height: 5px; */
+            text-align: center;
+            color:rgb(25, 25, 155);
+        }
+        h2{
+            margin-top: 10px;
+            text-align: center;
+            color:rgb(25, 25, 155);
+        }
+        h3{
+            color: #1c00b5;
+            margin-bottom: 10px;
+            
+        }
+        .contact-right h4{
+            color: #fff;
+            font-weight: 600px;
+            margin-bottom: 30px;
+        }
+        .contact-left h4{
+            color: #1c00b5;
+            font-weight: 600px;
+            margin-bottom: 30px;
+        }
+        .container{
+            margin-bottom: 40px;
+            width: 80%;
+            margin: 50px auto;
+
+        }
+        .contact-box{
+        background: #fff;
+        display: flex;
+        }
+        .contact-left{
+            flex-basis: 60%;
+            padding: 20px 60px;
+            background: rgb(201, 197, 197);
+        }
+        .contact-right{
+            flex-basis: 40%;
+            padding: 40px 60px;
+            background: #1c00b5;
+            color: #fff;
+             
+        }
+        
+        .container p{
+            color: #1c00b5;
+            margin-bottom: 20px; 
+        }
+        .input-row{
+            display: flex;
+            justify-content: space-between 60px;
+            margin-bottom: 20px;
+        }
+        .input-row.input-group{
+            flex-basis: 80%;
+        }
+        input{
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            padding-bottom: 5px;
+        }
+        textarea{
+            width: 100%;
+            border: 1px solid #ccc;
+            outline: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        label{
+            margin-bottom: 6px;
+            display: block;
+            color: #1c00b5;
+        }
+        button{
+            background: #1c00b5;
+            width: 100px;
+            border: none;
+            outline: none;
+            color: #fff;
+            height: 35px;
+            border-radius: 30px;
+            margin-top: 20px;
+            box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
+        }
+
+        tr rd:first-child{
+            padding-right: 20px;
+            
+        }
+        
+        .title_aboutus{
+            margin-top: 50px;
+        }
+
+        /* .item11{
+            background-image: url("images/about2new.png");
+            margin-top: 5%;
+                    width: 1366;
+                    height: 768;
+        } */
+        body {
+            background: url(/static/images/about2new.png), linear-gradient(rgb(200, 189, 234),rgba(156, 216, 214, 0.5));
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: 80% 95%;
+            background-position: 300px 35px; 
+            background-blend-mode: overlay;
+            /* background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction:column ;
+            justify-content: center;
+            align-items: center ;
+            padding: 50px; */
+            
+            
+        }
+        .item12{
+            display: block;
+            
+            /* margin-block-start: 10em;
+            margin-block-end: 5em;
+            margin-inline-start: 5px;
+            margin-inline-end: 5px; */
+            font-size: smaller;
+            font-style: italic;
+        }
+        .text1{
+            /* margin-top: 20px; */
+            position:relative;
+            object-position: center;
+            bottom: 10px;
+            font-size:medium;
+            font-style: italic;
+        }
+        .image1{
+            margin-right: 100%;
+            margin-left: 30%;
+            width: 1300px; 
+        }
+        
+
+        
+        
+        
+     </style>
+  </head>
+
+<body>
+    <div class="item11">
+    <h1 >SHC-Sami Hospital Center</h1>
+    <h2>Information</h2>
+    <!-- <img class="image1" src="/static/images/about2new.png" alt="image">    <div/> -->
+    <!-- <section class="item12"> -->
+        <div class="text1">
+            <p>
+                During the years of its existence, SHC - University Medical Center, became from a small peripheral hospital to a university medical center, one of the leaders in the State of Israel:<br>
+                A center of excellence for providing available and high-quality medical service to the residents of the Negev on their various levels
+                <ul > <li><b> leader in advanced technologies</b></li></ul>
+                <ul > <li><b>A leader in research and development</b></li></ul>
+                <ul > <li><b>Adheres to the cultivation of human capital and the preservation of human dignity and rights.</b></li></ul>
+                The SHC Medical Center leads the hospitals in Israel in considering the national quality indicators established by the Ministry of Health.<br> The SHC hospital is a leader among the largest hospitals in Israel in an inspection conducted by the Ministry of Health in 2017.<br>
+                The medical center is a leader in a large number of fields of activity, advanced services and research:<br>
+                The Division of Neurology - an all-inclusive unit that coordinates the diagnostic, treatment and research activities in the various professions dealing with brain disease
+                <ul> <li> <b>Heart Center - Cardiothoracic surgery (surgery and cardiology)</b></li></ul>
+                <ul > <li><b>Bariatric treatment - surgeries to treat morbid obesity</b></li></ul>
+                <ul ><li><b>A national unit for infectious diseases in children that is the leader in research in Israel and the world</b></li></ul>
+                <ul ><li><b>Infection Prevention Unit</b></li></ul>
+                <ul ><li><b>burn unit</b></li></ul>
+                <ul><li><b>Intensive care units - general internal and pediatric - with world-class clinical results</b></li></ul>
+                <ul ><li><b>The largest trauma room in Israel - eight treatment stations including a special station for treating children. </b></li></ul>
+                <ul><li><b>The experienced trauma teams in Soroka treat about 600 trauma cases a year</b></li></ul>
+                <ul ><li><b>The delivery room at SHC is the most productive in the country with more than 17,000 births a year and has a highly experienced medical team.</b></li></ul>
+            </p>
+        </div>
+    <!-- </section> -->
+</div>
+    <div class="container">
+        <h3>Connect Us</h3> 
+        <p>Want to get in touch? Here's how you can reach us:</p>
+         <div class="contact-box">
+            <div class="contact-left">
+                <h4>Send your request</h4>
+                <form class="needs-validation" method="POST" action="{% url 'aboutus' %}" novalidate>
+                    {% csrf_token %}
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Enter Name" name="name">
+                        </div>
+                        <div class="input-group">
+                            <label>Phone</label>
+                            <input type="text" placeholder="+972 000000000" name="phone">
+                        </div>
+
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="text" placeholder="youremail@gmail.com" name="email">
+                        </div>
+                        <div class="input-group">
+                            <label>Subject</label>
+                            <input type="text" placeholder="Sub" name="subject">
+                        </div>
+
+                    </div>
+
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="Your Message" name="message"></textarea>
+
+                    <button type="submit">SEND</button>
+
+                </from>
+            </div>
+            <div class="contact-right">
+                <h4>Reach Us</h4>
+                <ul>
+                    <li>Email: info@SHC_Sami_Hospital_Center.com</li>
+                    <li>Phone: 555-555-5555</li>
+                    <li>Address: 56 Haim Nachman Bialik, Beer Sheva, 84100</li>
+                </ul>
+            </div>
+         </div> 
+    </div>
+</body>
+</html>
