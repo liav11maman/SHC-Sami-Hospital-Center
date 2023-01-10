@@ -29,25 +29,33 @@
 
       .gradient-custom {
         
-        background: -webkit-linear-gradient(to right, rgb(17, 187, 203), rgba(37, 117, 252, 1));
+        /* background: -webkit-linear-gradient(to right, rgb(17, 187, 203), rgba(37, 117, 252, 1));
         
         
-        background: linear-gradient(to right, rgb(44, 169, 75), rgb(43, 147, 211))
+        background: linear-gradient(to right, rgb(44, 169, 75), rgb(43, 147, 211)) */
+        position: relative;
+        right: 500px;
       }
       #signup{
         margin-top: 10px;
+      }
+      #back{
+       position: absolute;
+       height: 800px;
+       width: 1600px;
       }
     </style>
 </head>
 <body>
     {% include 'navbar2.html' %}
     <div>
-      <br><br>
+      <img id="back" src="/static/log6.jpg" alt="image">
+      
       <section class="vh-100 gradient-custom">
           <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
               <div class="col-12 col-md-9 col-lg-6 col-xl-5">
-                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card bg-dark text-white" style="border-radius: 1rem; margin-top: 50px;">
                   <div class="card-body p-5 text-center">
         
                     <div class="mb-md-5 mt-md-4 pb-5">

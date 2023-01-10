@@ -1,0 +1,100 @@
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <title>Patient Panel</title>
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik:wght@300&display=swap');
+        a:link {
+          text-decoration: none;
+        }
+    
+        a {
+          color: white;
+        }
+    
+        a:hover {
+          color: white;
+        }
+    
+        body {
+    
+          padding-left: 240px;
+        }
+        main {
+          position: relative;
+          height: 100vh;
+        }
+        .gradient-text{
+          position: absolute;
+          bottom: 75%;
+          left: 20%;
+          font-size: 40px;
+          color: rgb(44, 43, 43);
+          font-family: 'Open Sans', sans-serif;
+          font-family: 'Rubik', sans-serif;
+      }
+      
+      body {
+        background-image: url("/static/doctor-of-the-month-cup.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100% 30%;
+        }
+        #button-43 {
+            background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+            border-radius: .5rem;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            display: flex;
+            font-size: 16px;
+            justify-content: center;
+            padding: 1rem 1.75rem;
+            text-decoration: none;
+            width: 100%;
+            border: 0;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            position: 100% 5%;
+            }
+
+            #button-43:hover {
+            background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+            }
+
+            @media (min-width: 768px) {
+            #button-43 {
+                padding: 1rem 2rem;
+            }
+            }
+
+    </style>
+</head>
+    {% include 'navbar3.html' %}
+<body>
+    <br><br><br><br><br>
+    <h2 class="gradient-text" style="bottom: 60%"> Congratulations {{request.user.first_name}}, you are <div><strong>DOCTOR OF THE MONTH!</strong></div></h2>
+    <h6 class="gradient-text" style="bottom: 40%">Please go to the hospital manager <div>office to grab your reward,</div>Well Done!<div></div></h6>
+
+    <div>
+        <a href="{% url 'doctor_panel' %}">>
+            <button type="submit" value="doctor_panel" class="btn btn-info btn-lg" style="width: 15%;">Doctor Panel</button>
+        </a>
+    </div>
+</body>
+</html>
+
+
+{% endblock content %}

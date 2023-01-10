@@ -1,0 +1,158 @@
+{% load static %}
+{% block content %}
+{% include 'navbar3.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+    <title>medicial information</title>
+
+    <style>
+        h1{
+            background-position:unset;
+            margin-top: 90px;
+            /* height: 5px; */
+            text-align: center;
+            color:rgb(25, 25, 155);
+        }
+        h2{
+            margin-top: 10px;
+            text-align: center;
+            color:rgb(25, 25, 155);
+        }
+        .cont{
+            max-width: 1200px;
+            margin: auto;
+            background: #f2f2f2;
+            overflow: auto;
+        }
+        .gallery{
+            margin: 5px;
+            border: 1px solid #ccc;
+            float:left;
+            width: 390px;
+        }
+        .gallery img{
+            width: 390px;
+            height: 390px;
+            text-align: center;
+
+        }
+        .desc{
+            padding: 15px;
+            text-align: center;
+        }
+        .desc {
+            background-image: linear-gradient(#42A1EC, #0070C9);
+            border: 1px solid #0077CC;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            direction: ltr;
+            display: block;
+            font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: -.022em;
+            line-height: 1.47059;
+            min-width: 30px;
+            overflow: visible;
+            padding: 4px 15px;
+            text-align: center;
+            /* vertical-align: baseline; */
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+        }
+
+        .desc:disabled {
+            cursor: default;
+            opacity: .3;
+        }
+
+        .button-15:hover {
+            background-image: linear-gradient(#51A9EE, #147BCD);
+            border-color: #1482D0;
+            text-decoration: none;
+        }
+
+        .button-15:active {
+            background-image: linear-gradient(#3D94D9, #0067B9);
+            border-color: #006DBC;
+            outline: none;
+        }
+
+        .button-15:focus {
+            box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+            outline: none;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+    <h1 >SHC-Sami Hospital Center</h1>
+    <h2> Medical Information</h2>
+    <br>
+    <div class="cont">
+
+        <div class="gallery">
+            <div><a href="{% url 'cardiology' %}" class="desc">Cordiology</a></div>
+            <img src="/static/images/cardiology.jpeg" alt="image">
+              
+        </div>
+        <div class="gallery">
+            <div><a href="{% url 'pediatrics' %}" class="desc">Pediatrics</a></div>
+            <img src="/static/images/pediatrics.jpeg" alt="image">  
+        </div>
+        <div class="gallery">
+            <div><a href="{% url 'maternity_department' %}" class="desc">Maternity Department</a></div>
+            <img src="/static/images/maternity_department.jpeg" alt="Maternity Department">  
+        </div>
+        <div class="gallery">
+            <div><a href="{% url 'kidney_transplant' %}" class="desc">kidney transplant</a></div>
+            <img src="/static/images/kidney_transplant.jpeg" alt="image">  
+        </div>  
+        <div class="gallery">
+            <div><a href="{% url 'neurology' %}" class="desc">Neurology</a></div>
+            <img src="/static/images/neurology.jpeg" alt="image">  
+        </div>
+        <div class="gallery">
+            <div><a href="{% url 'cancer_medicine' %}" class="desc">Cancer medicine</a></div>
+            <img src="/static/images/cancer_medicine.jpeg" alt="image">  
+        </div>
+        <div class="gallery">
+            <div><a href="{% url 'urology_department' %}" class="desc">Urology Department</a></div>
+            <img src="/static/images/urology_department.jpeg" alt="image">  
+        </div> 
+        <div class="gallery">
+            <div><a href="{% url 'ophthalmology' %}" class="desc">Ophthalmology</a></div>
+            <img src="/static/images/ophthalmology.jpeg" alt="image">  
+        </div>
+        <div class="gallery">
+            <div><a href="{% url 'orthopedics' %}" class="desc">orthopedics</a></div>
+            <img src="/static/images/orthopedics.jpeg" alt="image">  
+        </div>
+
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+</body> 
+
+
+{% endblock content %}
