@@ -36,3 +36,26 @@ class Doctor(models.Model):
         return self.first_name + ' ' + self.last_name
 
 
+class ContactUs(models.Model):
+
+    name=models.CharField(max_length=40,null=True)
+    phone=models.CharField(max_length=40,null=True)
+    email=models.EmailField(max_length=40,null=True)
+    subject=models.CharField(max_length=40,null=True)
+    message=models.TextField(max_length=40,null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class BloodDon(models.Model):
+        
+    first_name=models.CharField(max_length=40,null=True)
+    last_name=models.CharField(max_length=40,null=True)
+    email=models.EmailField(max_length=40,null=True)
+    address=models.TextField(max_length=40,null=True)
+    phone=models.CharField(max_length=40,null=True)
+    blood_type=models.CharField(max_length=2, null=True)
+
+    def __str__(self):
+        return self.first_name

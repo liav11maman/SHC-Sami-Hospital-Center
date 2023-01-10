@@ -8,6 +8,8 @@ from .models import Patient, Doctor
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
 from .forms import EditPatientForm
+from .models import ContactUs
+from .models import BloodDon
 
 
 def home(request):
@@ -142,10 +144,33 @@ def pharmacy(request):
 
 @login_required(login_url='signin')
 def blood_donation(request):
+    if request.method == "POST":
+        first_name=request.POST['first_name']
+        last_name=request.POST['last_name']
+        email=request.POST['email']
+        address=request.POST['address']
+        phone=request.POST['phone']
+        blood_type=request.POST['blood_type']
+
+        new_blood_don=BloodDon(first_name=first_name,last_name=last_name,email=email,address=address,phone=phone,blood_type=blood_type)
+        new_blood_don.save()
+        return render(request, 'thanks.html')
+
     return render(request, 'blood_donation.html')
 
 @login_required(login_url='signin')
 def aboutus(request):
+    if request.method == "POST":
+        name=request.POST['name']
+        phone=request.POST['phone']
+        email=request.POST['email']
+        subject=request.POST['subject']
+        message=request.POST['message']
+
+        new_aboutUs=ContactUs(name=name,phone=phone,email=email,subject=subject,message=message)
+        new_aboutUs.save()
+        return render(request, 'thanks.html')
+
     return render(request, 'aboutus.html')
 
 @login_required(login_url='signin')    
@@ -192,3 +217,36 @@ def update_patient_info(request, id):
 
 def doctor_of_the_month(request):
     return render(request, 'doctor_of_the_month.html')
+
+def medical_info(request):
+    return render(request, 'medical_info.html')
+
+def cardiology(request):
+    return render(request, 'cardiology.html')
+
+def pediatrics(request):
+    return render(request, 'pediatrics.html')
+
+def maternity_department(request):
+    return render(request, 'maternity_department.html')
+
+def kidney_transplant(request):
+    return render(request, 'kidney_transplant.html')
+
+def neurology(request):
+    return render(request, 'neurology.html')
+
+def cancer_medicine(request):
+    return render(request, 'cancer_medicine.html')
+
+def urology_department(request):
+    return render(request, 'urology_department.html')
+
+def ophthalmology(request):
+    return render(request, 'ophthalmology.html')
+
+def orthopedics(request):
+    return render(request, 'orthopedics.html')
+
+def thanks(request):
+    return render(request, 'thanks.html')

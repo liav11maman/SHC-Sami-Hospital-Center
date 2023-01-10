@@ -90,7 +90,10 @@
         .menu ul li.icon-calendar {
           background-image: url("http://www.entypo.com/images//calendar.svg");
         }
-    
+        .menu ul li.icon-info {
+          background-image: url("http://www.entypo.com/images/info-with-circle.svg");
+        }
+
         .menu ul li:hover {
           background-color: rgba(0, 0, 0, 0.1);
         }
@@ -534,6 +537,7 @@
       <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'blood_donation' %}"><span>Blood Donations</span></a></li>
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'aboutus' %}"><span>About Us</span></a></li>
       <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href=""><span>Appointments</span></a></li>
+      <li tabindex="0" class="icon-info"> <a style="color:white; text-decoration:none;" href="{% url 'medical_info' %}"><span>Medical Information</span></a></li>
     </ul>
   </nav>
 

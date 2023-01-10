@@ -1,6 +1,7 @@
 from django.contrib import admin
 from . import models
-# Register your models here.
+from.models import ContactUs
+from.models import BloodDon
 
 class PatientAdmin(admin.ModelAdmin):
     search_fields = ['first_name', 'last_name', 'id_num', 'disease', 'gender']
@@ -15,5 +16,6 @@ class DoctorAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Patient, PatientAdmin)
 admin.site.register(models.Doctor, DoctorAdmin)
-
+admin.site.register(ContactUs)
+admin.site.register(BloodDon)
 
