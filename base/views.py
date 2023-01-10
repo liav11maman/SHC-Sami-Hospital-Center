@@ -138,11 +138,11 @@ def signout(request):
     return redirect('home')
 
 
-@login_required(login_url='signin')
+# @login_required(login_url='signin')
 def pharmacy(request):
     return render(request, 'pharmacy.html')
 
-@login_required(login_url='signin')
+# @login_required(login_url='signin')
 def blood_donation(request):
     if request.method == "POST":
         first_name=request.POST['first_name']
@@ -158,7 +158,7 @@ def blood_donation(request):
 
     return render(request, 'blood_donation.html')
 
-@login_required(login_url='signin')
+# @login_required(login_url='signin')
 def aboutus(request):
     if request.method == "POST":
         name=request.POST['name']
