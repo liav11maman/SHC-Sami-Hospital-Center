@@ -55,9 +55,6 @@
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
   data-admin-utc-offset="{% now "Z" %}">
 <a href="#content-start" class="skip-to-content-link">{% translate 'Skip to main content' %}</a>
-<a href="{% url 'live_chat_home' %}">
-<button class="button-41" role="button" style="position: absolute; left: 70%; bottom: 74%; width: 20%;"><strong>Live Chat</strong></button>
-</a>
 <!-- Container -->
 <div id="container">
 
@@ -77,8 +74,11 @@
             {% endblock %}
             {% block userlinks %}
                 {% if site_url %}
-                    <strong><a href="{{ site_url }}">{% translate 'View hospital' %}</a> /
                 {% endif %}
+                {% if site_url %}
+                <strong><a href="{% url 'live_chat_home' %}">Live Chat</a> /
+                <strong><a href="{{ site_url }}">{% translate 'View hospital' %}</a> /
+            {% endif %}
                 {% if user.is_active and user.is_staff %}
                     {% url 'django-admindocs-docroot' as docsroot %}
                     {% if docsroot %}

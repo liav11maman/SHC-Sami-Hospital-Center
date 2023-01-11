@@ -249,9 +249,6 @@
     <br><br><br><br><br>
     <!-- {% for dcs in dc %}
     {% if dcs.doctor_of_the_month == "Y" and dcs.first_name == request.user.first_name and dcs.last_name == request.user.last_name%}
-    <strong><p style="padding-left: 50px;">YOU ARE DOCTOR OF THE MONTH</p></strong>
-    <p style="background-image: url('/static/doctor-of-the-month-medal.png');"></p>
-    <strong><p style="padding-left: 50px;">Please go to the hospital manager office to grabd your reward, WELL DONE!</p></strong>
     {% endif %}
     {% endfor %}
      -->
@@ -267,7 +264,7 @@
     <ul>
       <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_panel' %}"><span>Doctor Panel</span></a></li>
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_pat_info' %}"><span>Patient Information</span></a></li>
-      <li tabindex="0" class="icon-upload"> <a style="color:white; text-decoration:none;" href="{% url 'upload' %}"><span>Upload Files</span></a></li>
+      <li tabindex="0" class="icon-upload"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_upload' %}"><span>Upload Files</span></a></li>
       <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_home' %}"><span>Live Chat</span></a></li>
     </ul>
     </ul>

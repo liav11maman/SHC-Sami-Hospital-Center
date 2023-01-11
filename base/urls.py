@@ -18,6 +18,7 @@ urlpatterns = [
     path('pharmacy/', views.pharmacy, name="pharmacy"),
     path('blood_donation/', views.blood_donation, name="blood_donation"),
     path('aboutus/', views.aboutus, name="aboutus"),
+    path('patient_upload/', views.patient_upload, name="patient_upload"),
     path('medical_info/',views.medical_info,name="medical_info"),
     path('cardiology/',views.cardiology,name="cardiology"),
     path('pediatrics/',views.pediatrics,name="pediatrics"),
@@ -33,7 +34,7 @@ urlpatterns = [
     path('doctor_panel/', views.doctor_panel, name="doctor_panel"),
     path('patients_information/', views.show_patients_information, name="doctor_pat_info"),
     path('delete/<str:id>/', views.delete, name="delete"),
-    path('upload/', views.upload, name="upload"),
+    path('doctor_upload/', views.doctor_upload, name="doctor_upload"),
     path('update_patient_info/<str:id>/', views.update_patient_info, name="update_patient_info"),
     path('doctor_of_the_month/', views.doctor_of_the_month, name="doctor_of_the_month"),
     #--------------Appointment urls-------------- 

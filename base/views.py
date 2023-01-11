@@ -65,12 +65,19 @@ def aboutus(request):
 
     return render(request, 'aboutus.html')
 #------------------------------------------ 
-def upload(request):
+def doctor_upload(request):
     if request.method == 'POST':
         uploaded_file = request.FILES['document']
         fs = FileSystemStorage()
         fs.save(uploaded_file.name, uploaded_file)
-    return render(request, 'upload.html')
+    return render(request, 'doctor_upload.html')
+    #------------------------------------------ 
+def patient_upload(request):
+    if request.method == 'POST':
+        uploaded_file = request.FILES['document']
+        fs = FileSystemStorage()
+        fs.save(uploaded_file.name, uploaded_file)
+    return render(request, 'patient_upload.html')
 #------------------------------------------ 
 def doctor_of_the_month(request):
     return render(request, 'doctor_of_the_month.html')
