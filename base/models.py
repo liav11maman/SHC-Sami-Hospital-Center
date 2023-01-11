@@ -61,7 +61,7 @@ class BloodDon(models.Model):
     def __str__(self):
         return self.first_name
 
-
+ #--------------Appointment Model-------------- 
 class Appointment(models.Model):
 
     patient_first_name = models.CharField(max_length=50, null=True)
@@ -75,13 +75,12 @@ class Appointment(models.Model):
     def __str__(self):
         return self.patient_first_name + ' ' + self.patient_last_name
     
-#------------live chat------------------
-
+#------------Live Chat-----------------
+#--------------Room Model--------------
 class Room(models.Model):
     name = models.CharField(max_length=1000)
 
-
-    
+ #--------------Message Model--------------   
 class Message(models.Model):
     value = models.CharField(max_length=1000000)
     date = models.DateTimeField(default=datetime.now, blank=True)
