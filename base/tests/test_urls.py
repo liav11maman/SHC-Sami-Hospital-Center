@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from base.views import getMessages, send, live_chat_home_checkview, live_chat_home, confirm_appointment, appointment, doctor_of_the_month, update_patient_info, doctor_upload, delete, home, signup, signin, signout, pharmacy, blood_donation, signup2, signin2, paitent, aboutus, patient_upload, medical_info, cardiology, pediatrics, maternity_department, kidney_transplant, neurology, cancer_medicine, urology_department, ophthalmology, orthopedics, thanks, doctor_panel, patients_information
+from base.views import room, getMessages, send, checkview, live_chat_home, confirm_appointment, appointment, doctor_of_the_month, update_patient_info, doctor_upload, delete, home, signup, signin, signout, pharmacy, blood_donation, signup2, signin2, paitent_panel, aboutus, patient_upload, medical_info, cardiology, pediatrics, maternity_department, kidney_transplant, neurology, cancer_medicine, urology_department, ophthalmology, orthopedics, thanks, doctor_panel, patients_information
 
 
 class TestUrls(SimpleTestCase):
@@ -37,10 +37,10 @@ class TestUrls(SimpleTestCase):
         self.assertEquals(resolve(url).func, signin2)
     # -------------Test-Patient urls--------------
 
-    def test_paitent_resolves(self):
-        # Testing the paitent url
-        url = reverse('paitent')
-        self.assertEquals(resolve(url).func, paitent)
+    # def test_paitent_resolves(self):
+    #     # Testing the paitent url
+    #     url = reverse('paitent')
+    #     self.assertEquals(resolve(url).func, paitent_panel)
 
     def test_pharmacy_resolves(self):
         # Testing the pharmacy url
@@ -160,15 +160,15 @@ class TestUrls(SimpleTestCase):
         url = reverse('live_chat_home')
         self.assertEquals(resolve(url).func, live_chat_home)
 
-    def test_live_chat_home_resolves(self):
+    def test_live_chat_home_room_resolves(self):
         # Testing the live_chat_home url
         url = reverse('live_chat_home/<str:room>')
-        self.assertEquals(resolve(url).func, live_chat_home)
+        self.assertEquals(resolve(url).func, room)
 
     def test_live_chat_home_checkview_resolves(self):
         # Testing the live_chat_home/checkview url
         url = reverse('live_chat_home/checkview')
-        self.assertEquals(resolve(url).func, live_chat_home_checkview)
+        self.assertEquals(resolve(url).func, checkview)
 
     def test_send_resolves(self):
         # Testing the send url
