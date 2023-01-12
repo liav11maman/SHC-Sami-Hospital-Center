@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Patient,Appointment, Doctor
+from .models import Patient,Appointment, BloodDonation, ContactUs
 from django.core.files.storage import FileSystemStorage
 # from django.views.generic import TemplateView
 #from .forms import Appointment_form
@@ -238,6 +238,9 @@ from django.http import HttpResponse, JsonResponse
 def live_chat_home(request):
     return render(request, 'live_chat_home.html')
 
+def live_chat_patient(request):
+    return render(request, 'live_chat_patient.html')
+
 def room(request, room):
     username = request.GET.get('username')
     room_details = Room.objects.get(name=room)
@@ -272,3 +275,33 @@ def getMessages(request, room):
 
     messages = Message.objects.filter(room=room_details.id)
     return JsonResponse({"messages":list(messages.values())})
+
+def blood_donation(request):
+    if request.method == "POST":
+        first_name=request.POST['first_name']
+        last_name=request.POST['last_name']
+        email=request.POST['email']
+        address=request.POST['address']
+        phone=request.POST['phone']
+        blood_type=request.POST['blood_type']
+
+        new_blood_don=BloodDonation(first_name=first_name,last_name=last_name,email=email,address=address,phone=phone,blood_type=blood_type)
+        new_blood_don.save()
+        return render(request, 'thanks.html')
+
+    return render(request, 'blood_donation.html')
+
+
+def aboutus(request):
+    if request.method == "POST":
+        name=request.POST['name']
+        phone=request.POST['phone']
+        email=request.POST['email']
+        subject=request.POST['subject']
+        message=request.POST['message']
+
+        new_aboutUs=ContactUs(name=name,phone=phone,email=email,subject=subject,message=message)
+        new_aboutUs.save()
+        return render(request, 'thanks.html')
+
+    return render(request, 'aboutus.html')   

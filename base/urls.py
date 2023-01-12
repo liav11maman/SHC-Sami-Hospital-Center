@@ -36,6 +36,9 @@ urlpatterns = [
     path('live_chat_home/checkview', views.checkview, name='checkview'),
     path('send', views.send, name='send'),
     path('getMessages/<str:room>/', views.getMessages, name='getMessages'),
+    path('live_chat_patient/', views.live_chat_patient, name='live_chat_patient'),
+    path('live_chat_patient/<str:room>/', views.room, name='room2'),
+    path('live_chat_patient/checkview', views.checkview, name='checkview2'),
 
 
 

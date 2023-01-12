@@ -26,7 +26,7 @@ admin.site.register(models.Doctor, DoctorAdmin)
 admin.site.register(models.Appointment, AppointmentAdmin)
 admin.site.register(models.Room)
 admin.site.register(models.Message)
-
-
+admin.site.register(models.ContactUs)
+admin.site.register(models.BloodDonation)
 
 
