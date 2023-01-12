@@ -1,5 +1,5 @@
 from django.test import TestCase
-from base.models import Patient, Doctor
+from base.models import Patient, Doctor, Appointment
 
 
 class TestModels(TestCase):
@@ -26,6 +26,15 @@ class TestModels(TestCase):
             experience = 10,
             id_num = 123456789,
             gender = 'F',
+        )
+        self.appointment1 = Appointment.objects.create(
+            patient_first_name = 'test',
+            patient_last_name = 'test1',
+            patient_email = 'test@test.com',
+            patient_phone_number = '054-1234567',
+            appointment_date = '2023-03-20',
+            appointment_time = '12:30:00',
+            description = 'test description'
         )
   
     
@@ -91,3 +100,7 @@ class TestModels(TestCase):
         # Test function to test the doctor and patient gender
         self.assertTrue(self.patient1.gender)
         self.assertNotEqual(self.patient1.gender, self.doctor1.gender)
+
+    def test_appointment_patient_name(self):
+        self.assertTrue(self.appointment1.patient_first_name)
+        

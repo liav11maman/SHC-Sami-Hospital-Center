@@ -28,7 +28,9 @@ urlpatterns = [
     path('appointment/', views.appointment, name="appointment"),
     path('confirm_appointment/', views.confirm_appointment, name="confirm_appointment"),
     path('delete/<str:id>/', views.delete, name="delete"),
+    path('delete/<str:id>/', views.delete_appointment, name="delete_appointment"),
     path('update_patient_info/<str:id>/', views.update_patient_info, name="update_patient_info"),
+    path('update_patient_appointment/<str:id>/', views.update_patient_appointment, name="update_patient_appointment"),
 
     #-----------live chat-----------------
     path('live_chat_home/', views.live_chat_home, name='live_chat_home'),
@@ -39,6 +41,8 @@ urlpatterns = [
     path('live_chat_patient/', views.live_chat_patient, name='live_chat_patient'),
     path('live_chat_patient/<str:room>/', views.room, name='room2'),
     path('live_chat_patient/checkview', views.checkview, name='checkview2'),
+    path('show_appointment_patient/', views.show_appointment_patient, name='show_appointment_patient'),
+
 
 
 

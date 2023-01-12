@@ -9,7 +9,7 @@ from django.core.files.storage import FileSystemStorage
 #from .forms import Appointment_form
 # from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
-from .forms import EditPatientForm
+from .forms import EditPatientForm, EditPatientAppointment
 
 
 def home(request):
@@ -213,8 +213,6 @@ def delete(request, id):
     data.delete()
     return redirect('doctor_pat_info')
 
-def test(request):
-    return render(request, 'test.html')
  
 def update_patient_info(request, id):
     context ={}
@@ -305,3 +303,28 @@ def aboutus(request):
         return render(request, 'thanks.html')
 
     return render(request, 'aboutus.html')   
+
+
+def show_appointment_patient(request):
+    appointment = Appointment.objects.all()
+    context = {'appointment':appointment}
+    return render(request, 'show_appointments_patient.html', context)
+
+def update_patient_appointment(request, id):
+    context ={}
+    obj = get_object_or_404(Appointment, id = id)
+    form = EditPatientAppointment(request.POST or None, instance = obj)
+ 
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/show_appointment_patient')
+ 
+    context["form"] = form
+ 
+    return render(request, "update_patient_appointment.html", context)    
+
+
+def delete_appointment(request, id):
+    data = get_object_or_404(Appointment, id=id) 
+    data.delete()
+    return redirect('show_appointment_patient')
