@@ -270,53 +270,55 @@
         </ul>
     </nav>
     <img src="/static/back2.jpg" alt="image" id="bg-img">
-    
-    <form  method="POST" action="{% url 'appointment' %}">
+
+    <div>
+      <form  method="POST" action="{% url 'appointment' %}">
         {% csrf_token %}
         <div class="my_form">
             <div class="form-group">
                 <div class="row">
                     <div class="col">
                         <label for="your_fname">First Name</label>
-                        <input type="text" class="form-control form-control-lg" name="your_fname" id="one" placeholder="First name" required>
+                        <input type="text" class="form-control" name="your_fname" id="one" placeholder="First name" required>
                     </div>
                     <div class="col">
                         <label for="your_lname">Last Name</label>
-                        <input type="text" class="form-control form-control-lg" name="your_lname" placeholder="Last name" required>
+                        <input type="text" class="form-control" name="your_lname" placeholder="Last name" required>
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="your_email">Email address</label>
-                    <input type="email" class="form-control form-control-lg" name="your_email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <input type="email" class="form-control" name="your_email" aria-describedby="emailHelp" placeholder="Enter email" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="your_phone">Phone Number</label>
-                    <input type="tel" class="form-control form-control-lg" name="your_phone" pattern="[0-9]{3}-[0-9]{7}" placeholder="054-1234567" required>
+                    <input type="tel" class="form-control" name="your_phone" pattern="[0-9]{3}-[0-9]{7}" placeholder="054-1234567" required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="your_date">Date</label>
-                    <input type="date" class="form-control form-control-lg" name="your_date" required>
+                    <input type="date" class="form-control" name="your_date" required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="your_time">Time</label>
-                    <input type="time" class="form-control form-control-lg" name="your_time" required>
+                    <input type="time" class="form-control" name="your_time" required>
                 </div>
                 <br>
                 <div class="mb-3">
                     <label for="your_description" class="form-label">Description</label>
-                    <textarea class="form-control form-control-lg" name="your_description" rows="3" placeholder="Enter Description"></textarea>
+                    <textarea class="form-control" name="your_description" rows="3" placeholder="Enter Description"></textarea>
                 </div>
     
                 <button type="submit" class="button-70" id="book">Book</button>
             </div>
         </div>
        
-    </form>
+      </form>
+    </div>
     {% endblock content %}
 </body>
 </html>
