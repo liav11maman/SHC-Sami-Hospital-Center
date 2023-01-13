@@ -114,9 +114,6 @@ def orthopedics(request):
 #------------------------------------------ 
 def thanks(request):
     return render(request, 'thanks.html')
-#----------------Tests View---------------- 
-def test(request):
-    return render(request, 'test.html')
 #----------------Login Views----------------
 def signup(request):
     

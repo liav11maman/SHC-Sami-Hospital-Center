@@ -230,7 +230,38 @@
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
+      }
+
+      .button-76 {
+        background-color: #cf245f;
+        background-image: linear-gradient(to bottom right, #fcd34d, #ef4444, #ec4899);
+        border: 0;
+        border-radius: .25rem;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 1.125rem; /* 18px */
+        font-weight: 600;
+        line-height: 1.75rem; /* 28px */
+        padding: 1rem 1.25rem;
+        text-align: center;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-76:hover {
+        box-shadow: none;
+      }
+
+      @media (min-width: 1024px) {
+        .button-76 {
+          font-size: 1.5rem; /* 24px */
+          padding: 1rem 1.5rem;
+          line-height: 2rem; /* 32px */
         }
+      }
 
     /*-------------------header---------------*/
     </style>
@@ -239,20 +270,18 @@
     <!-- nav start -->
     {% include 'navbar3.html' %}
     <!-- nav end -->
-  
 
-    
     {% if user.is_authenticated %}
     <h1 class="gradient-text" style="padding-left: 20px;">Welcome Back, Doctor {{request.user.last_name}}!</h1>
     {% endif %}
     
     <br><br><br><br><br>
-    <!-- {% for dcs in dc %}
+    {% for dcs in dc %}
     {% if dcs.doctor_of_the_month == "Y" and dcs.first_name == request.user.first_name and dcs.last_name == request.user.last_name%}
+    <a href="{% url 'doctor_of_the_month' %}" style="position: absolute; top: 30%; left: 23%;"><button class="button-76" role="button">YOU ARE THE DOCTOR OF THE MONTH</button></a>
     {% endif %}
     {% endfor %}
-     -->
-    <!-- partial:index.partial.html -->
+
   <nav class="menu" tabindex="0">
     <div class="smartphone-menu-trigger"></div>
     <header class="avatar">
