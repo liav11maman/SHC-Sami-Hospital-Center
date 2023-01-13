@@ -6,9 +6,9 @@ from django.contrib.auth.decorators import login_required
 from .models import Patient, Doctor, Appointment
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
-from .forms import EditPatientForm
+from .forms import EditPatientForm, EditPatientAppointment
 from .models import ContactUs
-from .models import BloodDon
+from .models import BloodDonation
 from .models import Room, Message
 from django.http import HttpResponse, JsonResponse
 
@@ -45,7 +45,7 @@ def blood_donation(request):
         phone=request.POST['phone']
         blood_type=request.POST['blood_type']
 
-        new_blood_don=BloodDon(first_name=first_name,last_name=last_name,email=email,address=address,phone=phone,blood_type=blood_type)
+        new_blood_don=BloodDonation(first_name=first_name,last_name=last_name,email=email,address=address,phone=phone,blood_type=blood_type)
         new_blood_don.save()
         return render(request, 'thanks.html')
 
@@ -270,14 +270,42 @@ def appointment(request):
         
         return render(request, 'confirm_appointment.html', context)
 
-
-    return render(request, 'appointment.html')    
+    return render(request, 'appointment.html')
+#------------------------------------------
+def show_appointment_patient(request):
+    appointment = Appointment.objects.all()
+    context = {'appointment':appointment}
+    return render(request, 'show_appointments_patient.html', context)
+#------------------------------------------
+def update_patient_appointment(request, id):
+    context ={}
+    obj = get_object_or_404(Appointment, id = id)
+    form = EditPatientAppointment(request.POST or None, instance = obj)
+ 
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/show_appointment_patient')
+ 
+    context["form"] = form
+ 
+    return render(request, "update_patient_appointment.html", context)    
+#------------------------------------------
+def delete_appointment(request, id):
+    data = get_object_or_404(Appointment, id=id) 
+    data.delete()
+    return redirect('show_appointment_patient')    
 #------------------------------------------
 def confirm_appointment(request):
     return render(request, 'confirm_appointment.html') 
 #----------------Live Chat Views----------------
 def live_chat_home(request):
     return render(request, 'live_chat_home.html')
+#------------------------------------------
+def live_chat_doctor(request):
+    return render(request, 'live_chat_doctor.html')
+#------------------------------------------
+def live_chat_patient(request):
+    return render(request, 'live_chat_patient.html')
 #------------------------------------------
 def room(request, room):
     username = request.GET.get('username')

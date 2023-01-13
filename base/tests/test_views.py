@@ -73,4 +73,3 @@ class TestViews(TestCase):
     def test_signup(self):
         response = self.client.get(reverse('signup'))
         self.assertTemplateUsed(response, 'signup.html')
-# --------------Home test--------------

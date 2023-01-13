@@ -49,7 +49,7 @@ class ContactUs(models.Model):
         return self.name
 
  #--------------Blood Donations Model-------------- 
-class BloodDon(models.Model):
+class BloodDonation(models.Model):
         
     first_name=models.CharField(max_length=40,null=True)
     last_name=models.CharField(max_length=40,null=True)

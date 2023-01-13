@@ -1,7 +1,7 @@
 from django.contrib import admin
 from . import models
 from.models import ContactUs
-from.models import BloodDon
+from.models import BloodDonation
 
 
 #--------------Patient Class--------------
@@ -23,7 +23,7 @@ class AppointmentAdmin(admin.ModelAdmin):
 admin.site.register(models.Patient, PatientAdmin)
 admin.site.register(models.Doctor, DoctorAdmin)
 admin.site.register(ContactUs)
-admin.site.register(BloodDon)
+admin.site.register(BloodDonation)
 admin.site.register(models.Appointment, AppointmentAdmin)
 admin.site.register(models.Room)
 admin.site.register(models.Message)

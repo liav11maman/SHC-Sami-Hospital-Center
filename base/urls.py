@@ -40,12 +40,22 @@ urlpatterns = [
     #--------------Appointment urls-------------- 
     path('appointment/', views.appointment, name="appointment"),
     path('confirm_appointment/', views.confirm_appointment, name="confirm_appointment"),
+    path('delete/<str:id>/', views.delete_appointment, name="delete_appointment"),
+    path('update_patient_info/<str:id>/', views.update_patient_info, name="update_patient_info"),
+    path('update_patient_appointment/<str:id>/', views.update_patient_appointment, name="update_patient_appointment"),
+    path('show_appointment_patient/', views.show_appointment_patient, name='show_appointment_patient'),
     #-----------Live Chat urls-----------------
     path('live_chat_home/', views.live_chat_home, name='live_chat_home'),
     path('live_chat_home/<str:room>/', views.room, name='room'),
     path('live_chat_home/checkview', views.checkview, name='checkview'),
     path('send', views.send, name='send'),
     path('getMessages/<str:room>/', views.getMessages, name='getMessages'),
+    path('live_chat_patient/', views.live_chat_patient, name='live_chat_patient'),
+    path('live_chat_patient/<str:room>/', views.room, name='room2'),
+    path('live_chat_patient/checkview', views.checkview, name='checkview2'),
+    path('live_chat_doctor/', views.live_chat_doctor, name='live_chat_doctor'),
+    path('live_chat_doctor/<str:room>/', views.room, name='room3'),
+    path('live_chat_doctor/checkview', views.checkview, name='checkview3'),
 ]
 
 if settings.DEBUG:

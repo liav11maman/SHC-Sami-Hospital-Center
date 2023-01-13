@@ -102,6 +102,9 @@
         .menu ul li.icon-upload {
           background-image: url("http://www.entypo.com/images//upload.svg");
         }
+        .menu ul li.icon-archive {
+          background-image: url("http://www.entypo.com/images//archive.svg");
+        }
 
         .menu ul li:hover {
           background-color: rgba(0, 0, 0, 0.1);
@@ -542,8 +545,9 @@
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'aboutus' %}"><span>About Us</span></a></li>
       <li tabindex="0" class="icon-info"> <a style="color:white; text-decoration:none;" href="{% url 'medical_info' %}"><span>Medical Information</span></a></li>
       <li tabindex="0" class="icon-add-to-list"> <a style="color:white; text-decoration:none;" href="{% url 'appointment' %}"><span>Book Appointment</span></a></li>
-      <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_home' %}"><span>Live Chat</span></a></li>
+      <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_patient' %}"><span>Live Chat</span></a></li>
       <li tabindex="0" class="icon-upload"> <a style="color:white; text-decoration:none;" href="{% url 'patient_upload' %}"><span>Upload Files</span></a></li>
+      <li tabindex="0" class="icon-archive"> <a style="color:white; text-decoration:none;" href="{% url 'show_appointment_patient' %}"><span>My Appointments</span></a></li>
     </ul>
   </nav>
 
