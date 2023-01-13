@@ -170,6 +170,7 @@ def upload(request):
 
 
 #---------------------------------------------------------------------------
+@login_required(login_url=signin)
 def appointment(request):
 
     if request.method == 'POST':
