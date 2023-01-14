@@ -1,6 +1,6 @@
 from django.test import TestCase
-from base.models import Patient, Doctor, Appointment
-
+from base.models import Patient, Doctor, Appointment, ContactUs,BloodDonation,Message,Room
+from datetime import date,time, datetime
 
 class TestModels(TestCase):
 
@@ -32,12 +32,39 @@ class TestModels(TestCase):
             patient_last_name = 'test1',
             patient_email = 'test@test.com',
             patient_phone_number = '054-1234567',
-            appointment_date = '2023-03-20',
-            appointment_time = '12:30:00',
-            description = 'test description'
+            appointment_date = date(2022,1,14),
+            appointment_time = time(12,0),
+            description = None
+        )
+
+        self.contact1 = ContactUs.objects.create(
+            name = 'person',
+            phone = '054-9856231',
+            email = 'person@gmail.com',
+            subject = 'somthing',
+            message = None
+        )
+
+        self.blood_doner1 = BloodDonation.objects.create(
+            first_name = 'David',
+            last_name = 'Smith',
+            email = 'david.com',
+            address = 'new york',
+            phone = None,
+            blood_type = 'AB'
+        )
+
+        self.my_message = Message.objects.create(
+            value = "my message",
+            date = datetime(2022,4,16,12,30,00),
+            user = "username",
+            room = 'room name'
+        )
+
+        self.my_room = Room.objects.create(
+            name = "my room"
         )
   
-    
     def test_patient1_doctor1_first_name(self):
         # Test function to test the doctor and patient first name 
         self.assertTrue(self.patient1.first_name)
@@ -101,6 +128,65 @@ class TestModels(TestCase):
         self.assertTrue(self.patient1.gender)
         self.assertNotEqual(self.patient1.gender, self.doctor1.gender)
 
-    def test_appointment_patient_name(self):
-        self.assertTrue(self.appointment1.patient_first_name)
-        
+    def test_appointment_patient_first_name(self):
+        self.assertEqual(self.appointment1.patient_first_name, "test")
+
+    def test_appointment_patient_last_name(self):
+        self.assertEqual(self.appointment1.patient_last_name, "test1")
+
+    def test_appointment_patient_email(self):
+        self.assertIsNotNone(self.appointment1.patient_email)
+
+    def test_appointment_patient_phone_number(self):
+       self.assertEqual(self.appointment1.patient_phone_number, "054-1234567")       
+
+    def test_appointment_date(self):
+       self.assertTrue(isinstance(self.appointment1.appointment_date, date))      
+
+    def test_appointment_time(self):
+       self.assertTrue(isinstance(self.appointment1.appointment_time, time))    
+
+    def test_appointment_description(self):
+       self.assertIsNone(self.appointment1.description)
+
+    def test_contact_name(self):
+        self.assertEqual(self.contact1.name, 'person')   
+
+    def test_contact_phone(self):
+        self.assertFalse(isinstance(self.contact1.phone, float))    
+
+    def test_contact_email(self):
+        self.assertIn('@',self.contact1.email)  
+
+    def test_contact_subject(self):
+        self.assertIsNotNone(self.contact1.subject)    
+
+    def test_contact_message(self):
+        self.assertIsNone(self.contact1.message)    
+
+    def test_blood_doner_name(self):
+        self.assertEqual(self.blood_doner1.first_name, 'David')
+        self.assertNotEqual(self.blood_doner1.last_name, 'Cohen')    
+
+    def test_blood_doner_email(self):
+        self.assertIn('@',self.contact1.email)  
+
+    def test_blood_doner_phone(self):
+        self.assertIsNone(self.blood_doner1.phone)
+
+    def test_blood_doner_type(self):
+        types = ['A', 'A+', 'B', 'B+', 'AB', 'AB+', 'O', 'O+']
+        self.assertIn(self.blood_doner1.blood_type, types)
+
+    def test_message_value(self):
+        msg = 'my message'
+        self.assertIs(msg, self.my_message.value)
+
+    def test_message_datetime(self):
+        self.assertTrue(isinstance(self.my_message.date, datetime))
+
+    def test_message_room(self):
+        self.assertIsNotNone(self.my_message.room)
+
+    def test_room_name(self):
+        self.assertTrue(isinstance(self.my_room.name, str))

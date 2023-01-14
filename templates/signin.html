@@ -32,17 +32,22 @@
         background: -webkit-linear-gradient(to right, rgb(17, 187, 203), rgba(37, 117, 252, 1));
         
         
-        background: linear-gradient(to right, rgb(44, 169, 75), rgb(43, 147, 211))
+        background: linear-gradient(to right, rgb(44, 169, 75), rgb(43, 147, 211));
       }
       #signup{
         margin-top: 10px;
+      }
+      #back{
+       position: absolute;
+       height: 100%;
+       width: 100%;
       }
     </style>
 </head>
 <body>
     {% include 'navbar2.html' %}
     <div>
-      <br><br>
+      <img id="back" src="/static/test4.jpg" alt="image">
       <section class="vh-100 gradient-custom">
           <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
