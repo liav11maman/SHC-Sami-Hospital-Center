@@ -10,14 +10,13 @@ then install Django (version 4 and above) using:
 ```bash
     pip install django
 ```
-After that you need to install psycopg2 to connect to the project database (using railway web database)
+After that you need to install psycopg2 to connect to the project database (using railway web database):
 ```bash
   pip install psycopg2
 ```
 ## Deployment
 
-To deploy this project run
-
+To deploy this project run:
 ```bash
   python manage.py runserver
 ```
