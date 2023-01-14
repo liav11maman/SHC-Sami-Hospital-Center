@@ -58,7 +58,7 @@
     </style>
 </head>
 <body>
-    {% include 'patient_panel_clean.html' %}
+    {% include 'doctor_panel_clean.html' %}
     <section class="intro">
         <div class="gradient-custom-2 h-100">
           <div class="mask d-flex align-items-center h-100">
@@ -91,7 +91,7 @@
                               <td scope="row">{{ data.appointment_date }}</td>
                               <td scope="row">{{ data.appointment_time }}</td>
                               <td scope="row">
-                                <a href="" method="POST">
+                                <a href="{% url 'delete_appointment' data.id %}" method="post">
                                   {% csrf_token %}
                                   <button type="submit" value="Delete" id="del" class="btn btn-danger btn-sm icon-remove-user" style="width: 100px;"><b>Delete</b></button>
                                 </a>
