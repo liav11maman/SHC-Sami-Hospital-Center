@@ -44,7 +44,7 @@
         }
         #add_user{
             margin-bottom: 10px;
-            border-radius: 15   px;
+            border-radius: 15px;
             background-color: rgb(61, 157, 236);
             color: white;
             padding: 8px;
@@ -53,12 +53,12 @@
     </style>
 </head>
 <body>
-    {% include 'patient_panel_clean.html' %}
+    {% include 'doctor_panel_clean.html' %}
     <section class="intro">
         <div class="gradient-custom-2 h-100">
           <div class="mask d-flex align-items-center h-100">
             <div class="container">
-                <a href="{% url 'appointment' %}"><button class="btn btn-sm" id="add_user"><span><strong>&#43;</strong></span> Add Appointment</button></a>
+                <a href="{% url 'appointment_doctor' %}"><button class="btn btn-sm" id="add_user"><span><strong>&#43;</strong></span> Add Appointment</button></a>
               <div class="row justify-content-center">
                 <div class="col-12">
                   <div class="table-responsive">
@@ -71,13 +71,13 @@
                           <td scope="col"><strong>My phone number</strong></td>
                           <td scope="col"><strong>Date</strong></td>
                           <td scope="col"><strong>Time</strong></td>
-                          <td scope="col"><strong>Delete / Edit</strong></td>
+                          <td scope="col"><strong>Edit/Delete</strong></td>
                          
                         </tr>
                       </thead>
                       <tbody>
                         {% for data in appointment %}
-
+                        
                           <tr>
                               <td scope="row">{{ data.patient_first_name }}</td>
                               <td scope="row">{{ data.patient_last_name }}</td>
@@ -86,7 +86,7 @@
                               <td scope="row">{{ data.appointment_date }}</td>
                               <td scope="row">{{ data.appointment_time }}</td>
                               <td scope="row">
-                                <a href="" method="POST">
+                                <a href="{% url 'delete_appointment' data.id %}" method="post">
                                   {% csrf_token %}
                                   <button type="submit" value="Delete" id="del" class="btn btn-danger btn-sm icon-remove-user" style="width: 100px;"><b>Delete</b></button>
                                 </a>
@@ -99,6 +99,7 @@
                           {% endfor %}
                       </tbody>
                     </table>
+                  
                   </div>
                 </div>
               </div>

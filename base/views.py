@@ -227,7 +227,7 @@ def delete(request, id):
     data = get_object_or_404(Patient, id=id) 
     data.delete()
     return redirect('doctor_pat_info')
- 
+#------------------------------------------
 def update_patient_info(request, id):
     context ={}
     obj = get_object_or_404(Patient, id = id)
@@ -284,7 +284,25 @@ def update_patient_appointment(request, id):
  
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect('/show_appointment_patient')
+        return HttpResponseRedirect('/show_appointment')
+ 
+    context["form"] = form
+ 
+    return render(request, "update_patient_appointment.html", context)    
+#------------------------------------------
+def show_appointment(request):
+    appointment = Appointment.objects.all()
+    context = {'appointment':appointment}
+    return render(request, 'show_appointments.html', context)
+#------------------------------------------
+def update_patient_appointment(request, id):
+    context ={}
+    obj = get_object_or_404(Appointment, id = id)
+    form = EditPatientAppointment(request.POST or None, instance = obj)
+ 
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/show_appointment')
  
     context["form"] = form
  
@@ -293,7 +311,39 @@ def update_patient_appointment(request, id):
 def delete_appointment(request, id):
     data = get_object_or_404(Appointment, id=id) 
     data.delete()
-    return redirect('show_appointment_patient')    
+    return redirect('show_appointment')
+#------------------------------------------
+@login_required(login_url=signin)
+def appointment_doctor(request):
+
+    if request.method == 'POST':
+
+        your_fname = request.POST.get('your_fname')
+        your_lname= request.POST.get('your_lname')
+        your_email = request.POST.get('your_email')
+        your_phone = request.POST.get('your_phone')
+        your_date = request.POST.get('your_date')
+        your_time = request.POST.get('your_time')
+        your_description = request.POST.get('your_description')
+
+        context = {
+            'your_fname' : your_fname,
+            'your_lname' : your_lname,
+            'your_email' : your_email,
+            'your_phone' : your_phone,
+            'your_date' : your_date,
+            'your_time' : your_time,
+            'your_description' : your_description,
+        }
+
+        my_appointment = Appointment.objects.create(patient_first_name = your_fname, patient_last_name = your_lname, patient_email = your_email,
+        patient_phone_number = your_phone, appointment_date = your_date, appointment_time = your_time, description = your_description)
+        
+        my_appointment.save()
+        
+        return render(request, 'confirm_appointment.html', context)
+
+    return render(request, 'appointment_doctor.html')       
 #------------------------------------------
 def confirm_appointment(request):
     return render(request, 'confirm_appointment.html') 

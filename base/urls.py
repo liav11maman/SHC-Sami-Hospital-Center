@@ -39,11 +39,12 @@ urlpatterns = [
     path('doctor_of_the_month/', views.doctor_of_the_month, name="doctor_of_the_month"),
     #--------------Appointment urls-------------- 
     path('appointment/', views.appointment, name="appointment"),
+    path('appointment_doctor/', views.appointment_doctor, name="appointment_doctor"),
     path('confirm_appointment/', views.confirm_appointment, name="confirm_appointment"),
-    path('delete/<str:id>/', views.delete_appointment, name="delete_appointment"),
+    path('delete_appointment/<str:id>/', views.delete_appointment, name="delete_appointment"),
     path('update_patient_info/<str:id>/', views.update_patient_info, name="update_patient_info"),
     path('update_patient_appointment/<str:id>/', views.update_patient_appointment, name="update_patient_appointment"),
-    path('show_appointment_patient/', views.show_appointment_patient, name='show_appointment_patient'),
+    path('show_appointment/', views.show_appointment, name='show_appointment'),
     #-----------Live Chat urls-----------------
     path('live_chat_home/', views.live_chat_home, name='live_chat_home'),
     path('live_chat_home/<str:room>/', views.room, name='room'),

@@ -1,17 +1,12 @@
-
-{% block content %}
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
-    <title>Doctor Panel</title>
-    <style media="screen">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
         a:link {
           text-decoration: none;
         }
@@ -87,14 +82,17 @@
         .menu ul li.icon-calendar {
           background-image: url("http://www.entypo.com/images//calendar.svg");
         }
+        .menu ul li.icon-add-to-list {
+          background-image: url("http://www.entypo.com/images//add-to-list.svg");
+        }
         .menu ul li.icon-chat {
           background-image: url("http://www.entypo.com/images//chat.svg");
         }
-        .menu ul li.icon-upload {
-          background-image: url("http://www.entypo.com/images//upload.svg");
-        }
         .menu ul li.icon-archive {
           background-image: url("http://www.entypo.com/images//archive.svg");
+        }
+        .menu ul li.icon-upload {
+          background-image: url("http://www.entypo.com/images//upload.svg");
         }
         .menu ul li.icon-add-to-list {
           background-image: url("http://www.entypo.com/images//add-to-list.svg");
@@ -215,113 +213,121 @@
             pointer-events: none;
           }
         }
-        
-        .button-71 {
-          background-color: #0078d0;
-          border: 0;
-          border-radius: 56px;
-          color: #fff;
-          cursor: pointer;
-          display: inline-block;
-          font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
-          font-size: 18px;
-          font-weight: 600;
-          outline: 0;
-          padding: 16px 21px;
-          position: relative;
-          text-align: center;
-          text-decoration: none;
-          transition: all .3s;
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
+        #bg-img{
+            position: absolute;
+            
+            top: 80px;
+            width: 1450px;
+            height: 844px;
         }
-
-        .button-71:before {
-          background-color: initial;
-          background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
-          border-radius: 125px;
-          content: "";
-          height: 50%;
-          left: 4%;
-          opacity: .5;
-          position: absolute;
-          top: 0;
-          transition: all .3s;
-          width: 92%;
+        .my_form{
+            position: relative;
+            margin: auto;
+            width: 900px;
+            top: 100px;
         }
-
-        .button-71:hover {
-          box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
-          transform: scale(1.05);
+        #book{
+            position: relative;
+            left: 370px;
+            margin-top: 20px;
+            width: 150px;
         }
+        /*----------------------------------------------*/
+ 
 
-        @media (min-width: 768px) {
-          .button-71 {
-            padding: 16px 48px;
-          }
+        .button-70 {
+        background-image: linear-gradient(#0dccea, #0d70ea);
+        border: 0;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        font-family: Montserrat,sans-serif;
+        font-size: .9em;
+        margin: 5px;
+        padding: 10px 15px;
+        text-align: center;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
         }
-          
-          #up_bt {
-            text-align: center;
-          }
-        
-          .container{  
-            text-align: center;   
-            width: 300px;  
-            height: 200px;  
-            padding-top: 100px;  
-          } 
-
-          body, html {
-            height: 100%;
-          }
-
-
-
+    
     </style>
 </head>
 <body>
-  <h1 style="margin-bottom: -180px;"></h1>
+    {% block content %}
     {% include 'navbar3.html' %}
-    <div class="p-5 text-center bg-image rounded-3" style="
-    background-image: url('https://www.surveylegend.com/wordpress/wp-content/themes/sage/resources/images/img/modal/upgrade-file-upload.png');
-    height: 100%;
-  ">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-white">
-        <h1 class="mb-3">Upload Files</h1>
-        <div class="container">
-          <form id="up_bt" method="post" enctype="multipart/form-data" >
-            {%csrf_token%}
-            <input type="file" name="document">
-            <button class="button-71" role="button">Upload file</button>
-          </form>
-      </div>
+    <br><br><br>
+    <nav class="menu" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <header class="avatar">
+          <img src="/static/doctor.png" alt="Profile Pic" />
+          <br><br>
+          <h6>Doctor</h6>
+          <h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
+        </header>
+        <ul>
+            <ul>
+                <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_panel' %}"><span>Doctor Panel</span></a></li>
+                <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_pat_info' %}"><span>Patient Information</span></a></li>
+                <li tabindex="0" class="icon-upload"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_upload' %}"><span>Upload Files</span></a></li>
+                <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_home' %}"><span>Live Chat</span></a></li>
+                <li tabindex="0" class="icon-add-to-list"> <a style="color:white; text-decoration:none;" href="{% url 'appointment_doctor' %}"><span>Book Appointment</span></a></li>
+                <li tabindex="0" class="icon-archive"> <a style="color:white; text-decoration:none;" href="{% url 'show_appointment' %}"><span>My Appointment</span></a></li>
+              </ul>
+        </ul>
+    </nav>
+    <img src="/static/back2.jpg" alt="image" id="bg-img">
+
+    <div>
+      <form  method="POST" action="{% url 'appointment' %}">
+        {% csrf_token %}
+        <div class="my_form">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="your_fname">First Name</label>
+                        <input type="text" class="form-control" name="your_fname" id="one" placeholder="First name" required>
+                    </div>
+                    <div class="col">
+                        <label for="your_lname">Last Name</label>
+                        <input type="text" class="form-control" name="your_lname" placeholder="Last name" required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="your_email">Email address</label>
+                    <input type="email" class="form-control" name="your_email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="your_phone">Phone Number</label>
+                    <input type="tel" class="form-control" name="your_phone" pattern="[0-9]{3}-[0-9]{7}" placeholder="054-1234567" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="your_date">Date</label>
+                    <input type="date" class="form-control" name="your_date" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="your_time">Time</label>
+                    <input type="time" class="form-control" name="your_time" required>
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="your_description" class="form-label">Description</label>
+                    <textarea class="form-control" name="your_description" rows="3" placeholder="Enter Description"></textarea>
+                </div>
+    
+                <button type="submit" class="button-70" id="book">Book</button>
+            </div>
+        </div>
+       
+      </form>
     </div>
-  </div>
-  </div> 
-    <!-- partial:index.partial.html -->
-  <nav class="menu" tabindex="0">
-    <div class="smartphone-menu-trigger"></div>
-    <header class="avatar">
-      <img src="/static/doctor.png" alt="Profile Pic" />
-      <br><br>
-      <h6>Doctor</h6>
-      <h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
-    </header>
-    <ul>
-      <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_panel' %}"><span>Doctor Panel</span></a></li>
-      <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_pat_info' %}"><span>Patient Information</span></a></li>
-      <li tabindex="0" class="icon-upload"> <a style="color:white; text-decoration:none;" href="{% url 'doctor_upload' %}"><span>Upload Files</span></a></li>
-      <li tabindex="0" class="icon-chat"> <a style="color:white; text-decoration:none;" href="{% url 'live_chat_doctor' %}"><span>Live Chat</span></a></li>    
-      <li tabindex="0" class="icon-add-to-list"> <a style="color:white; text-decoration:none;" href="{% url 'appointment_doctor' %}"><span>Book Appointment</span></a></li>
-      <li tabindex="0" class="icon-archive"> <a style="color:white; text-decoration:none;" href="{% url 'show_appointment' %}"><span>My Appointments</span></a></li>
-    </ul>
-  </nav>
- 
+    {% endblock content %}
 </body>
 </html>
-
-
-{% endblock content %}
