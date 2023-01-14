@@ -1,7 +1,5 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from base.models import Patient, Doctor
-import json
 
 
 class TestViews(TestCase):
@@ -12,22 +10,10 @@ class TestViews(TestCase):
     def test_home(self):
         response = self.client.get(reverse('home'))
         self.assertTemplateUsed(response, 'home.html')
-# --------------patients_informations test--------------
-    # def test_patients_information(self):
-    #     response=self.client.get(reverse('doctor_pat_info'))
-    #     self.assertTemplateUsed(response,'patients_information.html')
 # --------------pharmacy test--------------
     def test_pharmacy(self):
         response = self.client.get(reverse('pharmacy'))
         self.assertTemplateUsed(response, 'pharmacy.html')
-# --------------patient_panel test--------------
-    # def test_patient_panel(self):
-    #     response = self.client.get(reverse('patient_panel'))
-    #     self.assertTemplateUsed(response, 'patient_panel.html')
-# --------------doctor_panel test--------------
-    # def test_doctor_panel(self):
-    #     response = self.client.get(reverse('doctor_panel'))
-    #     self.assertTemplateUsed(response, 'doctor_panel.html')
 # --------------blood_donation test--------------
     def test_blood_donation(self):
         response = self.client.get(reverse('blood_donation'))
